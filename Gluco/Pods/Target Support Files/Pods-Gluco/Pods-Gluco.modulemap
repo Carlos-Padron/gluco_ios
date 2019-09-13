@@ -1,0 +1,6 @@
+framework module Pods_Gluco {
+  umbrella header "Pods-Gluco-umbrella.h"
+
+  export *
+  module * { export * }
+}
