@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuVC: UIViewController {
+class MenuVCa: UIViewController {
     
     //IBOutlet
     @IBOutlet weak var menuBtn: UIButton!
