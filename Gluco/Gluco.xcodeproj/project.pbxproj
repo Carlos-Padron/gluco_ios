@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B02759623347C06000300F7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759523347C06000300F7 /* DataService.swift */; };
+		5B02759823347CA7000300F7 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759723347CA7000300F7 /* menu.swift */; };
+		5B02759E2334824C000300F7 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759D2334824C000300F7 /* menuCell.swift */; };
 		5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */; };
 		5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */; };
 		5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B02759523347C06000300F7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		5B02759723347CA7000300F7 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menu.swift; path = Gluco/Services/menu.swift; sourceTree = SOURCE_ROOT; };
+		5B02759D2334824C000300F7 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
 		5B76C29B232F25BA00D0BF75 /* Gluco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gluco-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B76C29C232F25BD00D0BF75 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -54,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B02759423347BC5000300F7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B02759523347C06000300F7 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5B76C29F232F2B8D00D0BF75 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,7 @@
 				5B76C2A9232F335000D0BF75 /* Gradient.swift */,
 				5BD09414233021870031AAD8 /* circularImage.swift */,
 				5BD0CD662330398F00A59451 /* roundedButton.swift */,
+				5B02759D2334824C000300F7 /* menuCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +100,7 @@
 		5B76C2A4232F30BD00D0BF75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B02759723347CA7000300F7 /* menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +126,7 @@
 		5BF744F6232B491F00709904 /* Gluco */ = {
 			isa = PBXGroup;
 			children = (
+				5B02759423347BC5000300F7 /* Services */,
 				5B76C2A4232F30BD00D0BF75 /* Model */,
 				5B76C2A3232F30AC00D0BF75 /* View */,
 				5B76C2A2232F30A200D0BF75 /* Controller */,
@@ -284,7 +301,10 @@
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
 				5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */,
+				5B02759E2334824C000300F7 /* menuCell.swift in Sources */,
 				5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */,
+				5B02759623347C06000300F7 /* DataService.swift in Sources */,
+				5B02759823347CA7000300F7 /* menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
