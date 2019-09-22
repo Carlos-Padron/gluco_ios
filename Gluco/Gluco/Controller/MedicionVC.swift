@@ -1,27 +1,23 @@
 //
-//  ConsultaVC.swift
+//  MedicionVC.swift
 //  Gluco
 //
-//  Created by Carlos Padrón on 9/15/19.
+//  Created by Carlos Padrón on 9/22/19.
 //  Copyright © 2019 Carlos Padrón. All rights reserved.
 //
 
 import UIKit
 
-class ConsultaVC: UIViewController {
-
-    //IBOutlet
+class MedicionVC: UIViewController {
 
     @IBOutlet weak var menuBtn: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setUpSWReveal()
-      
     }
     
-    
-    
+
     func setUpSWReveal(){
         menuBtn.target = self.revealViewController()
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -30,5 +26,4 @@ class ConsultaVC: UIViewController {
     }
     
 
-    
 }

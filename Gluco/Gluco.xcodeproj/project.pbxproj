@@ -14,6 +14,12 @@
 		5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */; };
 		5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */; };
 		5B76C2AA232F335000D0BF75 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A9232F335000D0BF75 /* Gradient.swift */; };
+		5BC4961923373E520014FA61 /* DietasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961823373E520014FA61 /* DietasVC.swift */; };
+		5BC4961B2337436C0014FA61 /* RegistrarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961A2337436C0014FA61 /* RegistrarVC.swift */; };
+		5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961C2337437E0014FA61 /* MedicionVC.swift */; };
+		5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961E2337439D0014FA61 /* DoctorVC.swift */; };
+		5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC496252337486B0014FA61 /* UserProfileVC.swift */; };
+		5BC496282337486B0014FA61 /* UserProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC496262337486B0014FA61 /* UserProfileVC.xib */; };
 		5BD09415233021870031AAD8 /* circularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD09414233021870031AAD8 /* circularImage.swift */; };
 		5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0CD662330398F00A59451 /* roundedButton.swift */; };
 		5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF744F7232B491F00709904 /* AppDelegate.swift */; };
@@ -34,6 +40,12 @@
 		5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaVC.swift; sourceTree = "<group>"; };
 		5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVCa.swift; sourceTree = "<group>"; };
 		5B76C2A9232F335000D0BF75 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		5BC4961823373E520014FA61 /* DietasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietasVC.swift; sourceTree = "<group>"; };
+		5BC4961A2337436C0014FA61 /* RegistrarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarVC.swift; sourceTree = "<group>"; };
+		5BC4961C2337437E0014FA61 /* MedicionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicionVC.swift; sourceTree = "<group>"; };
+		5BC4961E2337439D0014FA61 /* DoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorVC.swift; sourceTree = "<group>"; };
+		5BC496252337486B0014FA61 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		5BC496262337486B0014FA61 /* UserProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileVC.xib; sourceTree = "<group>"; };
 		5BD09414233021870031AAD8 /* circularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularImage.swift; sourceTree = "<group>"; };
 		5BD0CD662330398F00A59451 /* roundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedButton.swift; sourceTree = "<group>"; };
 		5BF744F4232B491F00709904 /* Gluco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gluco.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +92,13 @@
 		5B76C2A2232F30A200D0BF75 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5BC496252337486B0014FA61 /* UserProfileVC.swift */,
 				5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */,
+				5BC4961C2337437E0014FA61 /* MedicionVC.swift */,
 				5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */,
+				5BC4961823373E520014FA61 /* DietasVC.swift */,
+				5BC4961A2337436C0014FA61 /* RegistrarVC.swift */,
+				5BC4961E2337439D0014FA61 /* DoctorVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,6 +122,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5BC49620233746F80014FA61 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				5BC496262337486B0014FA61 /* UserProfileVC.xib */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		5BF744EB232B491F00709904 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +151,7 @@
 		5BF744F6232B491F00709904 /* Gluco */ = {
 			isa = PBXGroup;
 			children = (
+				5BC49620233746F80014FA61 /* Modals */,
 				5B02759423347BC5000300F7 /* Services */,
 				5B76C2A4232F30BD00D0BF75 /* Model */,
 				5B76C2A3232F30AC00D0BF75 /* View */,
@@ -220,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC496282337486B0014FA61 /* UserProfileVC.xib in Resources */,
 				5BF74502232B492300709904 /* LaunchScreen.storyboard in Resources */,
 				5BF7450A232B4A9200709904 /* GoogleService-Info.plist in Resources */,
 				5BF744FF232B492300709904 /* Assets.xcassets in Resources */,
@@ -295,11 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC4961B2337436C0014FA61 /* RegistrarVC.swift in Sources */,
 				5BD09415233021870031AAD8 /* circularImage.swift in Sources */,
+				5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */,
 				5B76C2AA232F335000D0BF75 /* Gradient.swift in Sources */,
 				5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */,
+				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
+				5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */,
+				5BC4961923373E520014FA61 /* DietasVC.swift in Sources */,
 				5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */,
 				5B02759E2334824C000300F7 /* menuCell.swift in Sources */,
 				5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */,

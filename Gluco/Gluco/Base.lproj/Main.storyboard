@@ -58,15 +58,17 @@
                                     <constraint firstAttribute="height" constant="3" id="yFC-t2-8fm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-pw-8er">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-pw-8er">
                                 <rect key="frame" x="0.0" y="296" width="768" height="639"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="100" id="eag-Ed-GiS" customClass="menuCell" customModule="Gluco" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="768" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eag-Ed-GiS" id="QIH-BG-MBY">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="kL0-PJ-4E2">
@@ -83,6 +85,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="kL0-PJ-4E2" firstAttribute="centerY" secondItem="QIH-BG-MBY" secondAttribute="centerY" id="1Si-Pr-e2G"/>
                                                 <constraint firstItem="n1R-Ea-IMV" firstAttribute="leading" secondItem="kL0-PJ-4E2" secondAttribute="trailing" constant="20" id="8Nc-ur-uKi"/>
@@ -104,6 +107,9 @@
                                 <state key="normal" title="Perfil">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="profileBtn:" destination="IiZ-eK-ENV" eventType="touchUpInside" id="dHU-1F-tHh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.83137254900000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,11 +139,16 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="RR4-pw-8er" id="xhc-GF-eza"/>
+                        <segue destination="vO0-4U-aP2" kind="custom" identifier="ConsultasSegue" customClass="SWRevealViewControllerSeguePushController" id="KPr-9U-TsR"/>
+                        <segue destination="mzt-qK-REy" kind="custom" identifier="RegistrarSegure" customClass="SWRevealViewControllerSeguePushController" id="yhX-5I-2Y0"/>
+                        <segue destination="E6F-d6-Jc9" kind="custom" identifier="MedicionesSegue" customClass="SWRevealViewControllerSeguePushController" id="HKC-Zh-GPB"/>
+                        <segue destination="Qch-AH-2rF" kind="custom" identifier="DoctorSegue" customClass="SWRevealViewControllerSeguePushController" id="U3L-nJ-jKB"/>
+                        <segue destination="0O0-Cm-6Mw" kind="custom" identifier="DietasSegue" customClass="SWRevealViewControllerSeguePushController" id="LWY-Ov-aet"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3L-wJ-BfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671.875" y="-713.671875"/>
+            <point key="canvasLocation" x="-230" y="-731"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="HhH-qf-t25">
@@ -151,79 +162,461 @@
                     </view>
                     <connections>
                         <segue destination="IiZ-eK-ENV" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Jeg-UX-reL"/>
-                        <segue destination="v1J-a2-shY" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="d1T-Y7-rZI"/>
+                        <segue destination="vO0-4U-aP2" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="d1T-Y7-rZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgE-9Y-W1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249" y="-407"/>
+            <point key="canvasLocation" x="-993" y="-731"/>
         </scene>
-        <!--ConsultaVC-->
+        <!--Consultas-->
         <scene sceneID="gPu-KU-PR9">
             <objects>
                 <viewController id="v1J-a2-shY" customClass="ConsultaVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xKp-CO-Vzv">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kz-pE-RtT" userLabel="topView" customClass="Gradient" customModule="Gluco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEd-3z-C0G">
-                                        <rect key="frame" x="28" y="49" width="45" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="1a6-ZD-n9n"/>
-                                            <constraint firstAttribute="width" constant="45" id="ksc-hP-Rxp"/>
-                                        </constraints>
-                                        <state key="normal" image="smackBurger"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consultas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMp-LQ-wiC">
-                                        <rect key="frame" x="320.5" y="47" width="127" height="39"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gluco Gota" translatesAutoresizingMaskIntoConstraints="NO" id="8cb-MK-fah">
-                                        <rect key="frame" x="700" y="44" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="339-WL-1Lm"/>
-                                            <constraint firstAttribute="width" constant="40" id="fEA-Eg-x3x"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.039215686274509803" green="0.28627450980392155" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="QEd-3z-C0G" firstAttribute="leading" secondItem="5Kz-pE-RtT" secondAttribute="leadingMargin" constant="20" id="Cb6-yB-are"/>
-                                    <constraint firstItem="HMp-LQ-wiC" firstAttribute="centerX" secondItem="5Kz-pE-RtT" secondAttribute="centerX" id="Ezz-AQ-tfB"/>
-                                    <constraint firstAttribute="height" constant="100" id="Osa-Zz-NjK"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="8cb-MK-fah" secondAttribute="bottom" constant="8" id="Qkw-UP-QqD"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="QEd-3z-C0G" secondAttribute="bottom" constant="8" id="VBA-jt-qOV"/>
-                                    <constraint firstItem="HMp-LQ-wiC" firstAttribute="centerY" secondItem="QEd-3z-C0G" secondAttribute="centerY" id="dfL-tq-zMZ"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="8cb-MK-fah" secondAttribute="trailing" constant="20" id="ihg-Bs-GeN"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="5Kz-pE-RtT" firstAttribute="leading" secondItem="JgV-CI-zrA" secondAttribute="leading" id="2uo-tF-oew"/>
-                            <constraint firstItem="5Kz-pE-RtT" firstAttribute="top" secondItem="xKp-CO-Vzv" secondAttribute="top" id="USY-O9-Qmp"/>
-                            <constraint firstItem="JgV-CI-zrA" firstAttribute="trailing" secondItem="5Kz-pE-RtT" secondAttribute="trailing" id="wGo-fc-dE9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JgV-CI-zrA"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Consultas" prompt="                  " id="6YQ-1Y-AX6">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="ufH-9L-Aql">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="menuBtn" destination="QEd-3z-C0G" id="uDw-za-o3b"/>
+                        <outlet property="menuBtn" destination="ufH-9L-Aql" id="pcs-vg-zsP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Eh-j2-8O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677.60000000000002" y="66.502463054187189"/>
+            <point key="canvasLocation" x="574" y="621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cTp-n0-kfl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vO0-4U-aP2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TA9-q7-wFj">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641435623169" green="0.28631657361984253" blue="0.46903973817825317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823529411764" green="0.28627450980392155" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v1J-a2-shY" kind="relationship" relationship="rootViewController" id="lI0-Bp-oA3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pr-o4-ZXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-230" y="621"/>
+        </scene>
+        <!--Dietas-->
+        <scene sceneID="XHg-Sp-NnB">
+            <objects>
+                <viewController id="MJo-fX-TSn" customClass="DietasVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EmL-QD-mtR">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GbO-MC-Akw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dietas" prompt="                  " id="Zcv-4h-xEm">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="dmJ-0R-5FA">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="dmJ-0R-5FA" id="6AD-59-ms1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZK-8Q-BmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240" y="-1678"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oiM-Qb-vzv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rde-MH-p4X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cuK-VA-oBS">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MJo-fX-TSn" kind="relationship" relationship="rootViewController" id="GwA-DU-dJp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciK-NN-lcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440" y="-1678"/>
+        </scene>
+        <!--Registrar paciente-->
+        <scene sceneID="E1d-zT-rpT">
+            <objects>
+                <viewController id="ucx-ns-F3x" customClass="RegistrarVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Cw-7N-IgT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="blh-Jj-PyS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Registrar paciente" prompt="                  " id="0Bl-mo-Dhc">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="kjy-S2-WdQ">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="kjy-S2-WdQ" id="ki9-ul-XHY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3h8-wD-RJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239" y="-1678"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hDE-zG-Hpm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mzt-qK-REy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vdd-xl-Fzy">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ucx-ns-F3x" kind="relationship" relationship="rootViewController" id="sAh-PD-XeU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czm-OW-gBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440" y="-1678"/>
+        </scene>
+        <!--Dietas-->
+        <scene sceneID="Sg2-d2-SdT">
+            <objects>
+                <viewController id="61C-aR-roD" customClass="DietasVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oee-0f-2jm">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ktY-MY-EYi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dietas" prompt="                  " id="Jbt-Tk-FM1">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="reW-te-UsK">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="reW-te-UsK" id="sSD-En-fCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enZ-fU-gVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2295" y="-782"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="krr-tp-Rpb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QZO-JK-h19" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hn6-hv-VQx">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="61C-aR-roD" kind="relationship" relationship="rootViewController" id="3BE-zg-6iu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mW-sq-6sV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="-782"/>
+        </scene>
+        <!--Mediciones-->
+        <scene sceneID="307-9V-vuZ">
+            <objects>
+                <viewController id="FBB-qO-NMK" customClass="MedicionVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q0N-8e-JVC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KqE-DZ-GDn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mediciones" prompt="                  " id="Rfu-x7-2gT">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="GMQ-0S-DWr">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="GMQ-0S-DWr" id="h8a-d2-AxY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kf-Ii-bEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="-782"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mRR-ZZ-Z7H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E6F-d6-Jc9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jty-yo-bo7">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FBB-qO-NMK" kind="relationship" relationship="rootViewController" id="zye-Cw-dL0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSN-tl-glD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="-782"/>
+        </scene>
+        <!--Dietas-->
+        <scene sceneID="ifA-vH-cUr">
+            <objects>
+                <viewController id="nGs-gO-Bdk" customClass="DietasVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oad-Ds-Py1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BrC-nj-37z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dietas" prompt="                  " id="5wd-fr-Col">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="FN1-4B-qB3">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="FN1-4B-qB3" id="zSz-uG-5ZI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeo-41-N0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2295" y="166"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EPi-NM-V50">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MAt-9U-D5g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4yz-cJ-aIJ">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nGs-gO-Bdk" kind="relationship" relationship="rootViewController" id="gEV-Qa-fmE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfG-QQ-QR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="166"/>
+        </scene>
+        <!--Doctor-->
+        <scene sceneID="Ncp-6e-cje">
+            <objects>
+                <viewController id="A9e-Ze-hdk" customClass="DoctorVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGP-GD-O9w">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1gu-z5-x9O"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Doctor" prompt="                  " id="dg9-wC-WdC">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="A4m-j3-pOk">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="A4m-j3-pOk" id="auF-N1-nic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfw-WK-8W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="166"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HiB-DX-jmm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qch-AH-2rF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysq-dB-eCE">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A9e-Ze-hdk" kind="relationship" relationship="rootViewController" id="gMy-JK-kax"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s97-57-f8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="166"/>
+        </scene>
+        <!--Dietas-->
+        <scene sceneID="7TI-OO-Nwl">
+            <objects>
+                <viewController id="i3g-A5-kll" customClass="DietasVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f8l-th-Lfi">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZEf-a4-gLd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dietas" prompt="                  " id="sJm-oi-KyB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="shg-ZJ-p76">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="shg-ZJ-p76" id="U63-wF-7rt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c92-WN-jRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="-2006"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hNT-D8-Pxi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oPs-rp-ukd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qwB-FG-HJc">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i3g-A5-kll" kind="relationship" relationship="rootViewController" id="wRu-Oo-yDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1N-E2-9cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-227" y="-2006"/>
+        </scene>
+        <!--Dietas-->
+        <scene sceneID="0hV-sM-Vio">
+            <objects>
+                <viewController id="rCL-hq-COc" customClass="DietasVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iBg-jL-nmE">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TKo-Ta-B7U"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dietas" prompt="                  " id="lbb-Q0-JCV">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="smackBurger" id="Yhf-fr-egm">
+                            <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="Yhf-fr-egm" id="8vN-0Z-ibX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WkB-HC-EGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="-2006"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OYY-RY-lVm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0O0-Cm-6Mw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gOl-dl-rxI">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rCL-hq-COc" kind="relationship" relationship="rootViewController" id="vST-TA-rDb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFG-RL-MOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-227" y="-2006"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Gluco Gota" width="1000" height="1000"/>
         <image name="eye" width="34" height="22"/>
         <image name="profilePic" width="853" height="853"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KPr-9U-TsR"/>
+    </inferredMetricsTieBreakers>
 </document>
