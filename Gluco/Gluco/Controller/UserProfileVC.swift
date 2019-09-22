@@ -12,19 +12,25 @@ class UserProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dismissKB()
         // Do any additional setup after loading the view.
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func modalClosed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
+    
+    func dismissKB(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UserProfileVC.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+        print("dismiss")
+    }
 
 }

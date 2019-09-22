@@ -23,7 +23,7 @@ class roundedButton: UIButton {
     
    func setUpColor(){
     self.layer.cornerRadius = 10
-    self.layer.backgroundColor = UIColor.red.cgColor
+
     }
 
 }

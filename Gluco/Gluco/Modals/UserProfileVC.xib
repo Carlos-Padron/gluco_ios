@@ -24,94 +24,112 @@
                     <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5Y-uT-lkf">
-                            <rect key="frame" x="40" y="50" width="688" height="400"/>
+                            <rect key="frame" x="40" y="50" width="688" height="600"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePic" translatesAutoresizingMaskIntoConstraints="NO" id="03J-gc-hqV" customClass="circularImage" customModule="Gluco" customModuleProvider="target">
-                                    <rect key="frame" x="29" y="55" width="290" height="290"/>
+                                    <rect key="frame" x="28" y="65" width="315" height="315"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="290" id="SHN-AB-z26"/>
+                                        <constraint firstAttribute="height" constant="315" id="61g-fV-cQJ"/>
+                                        <constraint firstAttribute="width" constant="315" id="mcm-Q4-qlG"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tr-2z-ljG">
-                                    <rect key="frame" x="28" y="16" width="632" height="41"/>
+                                    <rect key="frame" x="28" y="16" width="372" height="41"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="41" id="zvF-ko-mCz"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
                                     <color key="textColor" red="0.51372549019607838" green="0.59999999999999998" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-nN-lMv">
-                                    <rect key="frame" x="339" y="65" width="329" height="135"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-nN-lMv">
+                                    <rect key="frame" x="353" y="65" width="317" height="297"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aE-Oa-f5z">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="317" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="rdl-Fx-kJD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                             <color key="textColor" red="0.51372549019607838" green="0.59999999999999998" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkL-f3-PMh">
-                                            <rect key="frame" x="0.0" y="25" width="329" height="29.5"/>
+                                            <rect key="frame" x="0.0" y="29" width="317" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="O5I-ub-maj"/>
+                                            </constraints>
                                             <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyD-uf-xu3">
-                                            <rect key="frame" x="0.0" y="55.5" width="62.5" height="24"/>
+                                            <rect key="frame" x="0.0" y="74" width="317" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="8GY-Te-b0y"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                             <color key="textColor" red="0.51372549019607838" green="0.59999999999999998" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1h-tz-nhZ">
-                                            <rect key="frame" x="0.0" y="80.5" width="329" height="29.5"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpr-EV-jEH" userLabel="generoPicker">
+                                            <rect key="frame" x="0.0" y="103" width="317" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="LHV-80-ooz"/>
+                                            </constraints>
+                                        </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de Diabetes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR0-Nw-ceo">
-                                            <rect key="frame" x="0.0" y="111" width="137" height="24"/>
+                                            <rect key="frame" x="0.0" y="188" width="201.5" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="zMt-3o-97Q"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                             <color key="textColor" red="0.51372549019607838" green="0.59999999999999998" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-6a-87r" userLabel="diabetesPicker">
+                                            <rect key="frame" x="0.0" y="217" width="317" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="f6p-fQ-wTx"/>
+                                            </constraints>
+                                        </pickerView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="kkL-f3-PMh" firstAttribute="leading" secondItem="PQu-nN-lMv" secondAttribute="leading" id="Qg6-pw-mR1"/>
-                                        <constraint firstItem="C1h-tz-nhZ" firstAttribute="leading" secondItem="PQu-nN-lMv" secondAttribute="leading" id="UDf-ES-UdV"/>
-                                        <constraint firstItem="TyD-uf-xu3" firstAttribute="centerY" secondItem="PQu-nN-lMv" secondAttribute="centerY" id="b4M-YD-wnj"/>
-                                        <constraint firstAttribute="trailing" secondItem="C1h-tz-nhZ" secondAttribute="trailing" id="hUu-CU-7vv"/>
-                                        <constraint firstAttribute="trailing" secondItem="kkL-f3-PMh" secondAttribute="trailing" id="mxh-Gz-956"/>
-                                        <constraint firstItem="5aE-Oa-f5z" firstAttribute="top" secondItem="PQu-nN-lMv" secondAttribute="top" id="yru-QO-lg3"/>
+                                        <constraint firstAttribute="trailing" secondItem="5aE-Oa-f5z" secondAttribute="trailing" id="XVg-Wq-1Zd"/>
+                                        <constraint firstAttribute="trailing" secondItem="kkL-f3-PMh" secondAttribute="trailing" id="XzX-tq-zhh"/>
+                                        <constraint firstAttribute="trailing" secondItem="TyD-uf-xu3" secondAttribute="trailing" id="Y4J-gh-rUH"/>
                                     </constraints>
                                 </stackView>
-                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-6a-87r">
-                                    <rect key="frame" x="339" y="201" width="329" height="80"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfA-D0-Wse">
+                                    <rect key="frame" x="620" y="18" width="50" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="80" id="u0i-w3-rWw"/>
+                                        <constraint firstAttribute="height" constant="50" id="g6u-qz-TxH"/>
+                                        <constraint firstAttribute="width" constant="50" id="mOY-um-o0m"/>
                                     </constraints>
-                                </pickerView>
+                                    <state key="normal" image="closeBtn"/>
+                                    <connections>
+                                        <action selector="modalClosed:" destination="-1" eventType="touchUpInside" id="rSP-FZ-UFH"/>
+                                    </connections>
+                                </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uch-Mu-FXA">
-                                    <rect key="frame" x="339" y="325" width="329" height="50"/>
+                                    <rect key="frame" x="100" y="490" width="488" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHo-Hp-Spv" customClass="roundedButton" customModule="Gluco" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="10" width="154.5" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="234" height="50"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Actualiar foto">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="Zeb-Qu-fjW"/>
+                                            </constraints>
+                                            <state key="normal" title="Actualizar foto">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIs-6K-reH" customClass="roundedButton" customModule="Gluco" customModuleProvider="target">
-                                            <rect key="frame" x="174.5" y="10" width="154.5" height="30"/>
+                                            <rect key="frame" x="254" y="0.0" width="234" height="50"/>
                                             <color key="backgroundColor" red="0.045956641440000001" green="0.28631657360000001" blue="0.4690397382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="kpe-1l-hUk"/>
+                                            </constraints>
                                             <state key="normal" title="Actualizar perfil">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -124,25 +142,22 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Uch-Mu-FXA" secondAttribute="trailing" constant="100" id="3FP-3w-Pdo"/>
                                 <constraint firstItem="0Tr-2z-ljG" firstAttribute="top" secondItem="C5Y-uT-lkf" secondAttribute="top" constant="16" id="4HP-Tf-yuE"/>
-                                <constraint firstItem="8cE-6a-87r" firstAttribute="leading" secondItem="Uch-Mu-FXA" secondAttribute="leading" id="AHX-Rg-jM3"/>
-                                <constraint firstItem="0Tr-2z-ljG" firstAttribute="centerX" secondItem="C5Y-uT-lkf" secondAttribute="centerX" id="CEl-1w-MVN"/>
-                                <constraint firstItem="8cE-6a-87r" firstAttribute="trailing" secondItem="PQu-nN-lMv" secondAttribute="trailing" id="DMI-2m-aPS"/>
+                                <constraint firstItem="dfA-D0-Wse" firstAttribute="leading" secondItem="0Tr-2z-ljG" secondAttribute="trailing" constant="220" id="75w-vm-WaW"/>
+                                <constraint firstItem="PQu-nN-lMv" firstAttribute="trailing" secondItem="dfA-D0-Wse" secondAttribute="trailing" id="AQH-VS-EJl"/>
                                 <constraint firstItem="0Tr-2z-ljG" firstAttribute="top" secondItem="C5Y-uT-lkf" secondAttribute="topMargin" constant="8" id="Gan-pv-eAW"/>
-                                <constraint firstItem="Uch-Mu-FXA" firstAttribute="width" secondItem="PQu-nN-lMv" secondAttribute="width" id="JIs-ld-C2G"/>
-                                <constraint firstItem="PQu-nN-lMv" firstAttribute="top" secondItem="0Tr-2z-ljG" secondAttribute="bottom" constant="8" id="JfX-6D-WMo"/>
-                                <constraint firstItem="03J-gc-hqV" firstAttribute="centerY" secondItem="C5Y-uT-lkf" secondAttribute="centerY" id="Mqq-OH-a7u"/>
-                                <constraint firstItem="8cE-6a-87r" firstAttribute="top" secondItem="PQu-nN-lMv" secondAttribute="bottom" constant="1" id="PTA-69-x9Q"/>
+                                <constraint firstItem="dfA-D0-Wse" firstAttribute="top" secondItem="C5Y-uT-lkf" secondAttribute="topMargin" constant="10" id="Nht-dg-M09"/>
                                 <constraint firstItem="0Tr-2z-ljG" firstAttribute="leading" secondItem="C5Y-uT-lkf" secondAttribute="leadingMargin" constant="20" id="PtU-9v-xR3"/>
-                                <constraint firstAttribute="trailing" secondItem="PQu-nN-lMv" secondAttribute="trailing" constant="20" id="SzA-mO-eYx"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="0Tr-2z-ljG" secondAttribute="trailing" constant="20" id="W3M-wv-KN5"/>
-                                <constraint firstAttribute="bottom" secondItem="8cE-6a-87r" secondAttribute="bottom" constant="119" id="aTc-8Y-qof"/>
-                                <constraint firstItem="8cE-6a-87r" firstAttribute="leading" secondItem="PQu-nN-lMv" secondAttribute="leading" id="ivI-KV-fCq"/>
-                                <constraint firstItem="03J-gc-hqV" firstAttribute="top" secondItem="C5Y-uT-lkf" secondAttribute="top" constant="55" id="nuA-BR-wDa"/>
-                                <constraint firstItem="Uch-Mu-FXA" firstAttribute="top" secondItem="8cE-6a-87r" secondAttribute="bottom" constant="44" id="sB9-me-FmE"/>
-                                <constraint firstAttribute="height" constant="400" id="t9c-dR-BA7"/>
-                                <constraint firstItem="PQu-nN-lMv" firstAttribute="leading" secondItem="03J-gc-hqV" secondAttribute="trailing" constant="20" id="tA3-eW-b0v"/>
-                                <constraint firstItem="03J-gc-hqV" firstAttribute="leading" secondItem="C5Y-uT-lkf" secondAttribute="leading" constant="29" id="uZk-y2-Hd0"/>
+                                <constraint firstItem="Uch-Mu-FXA" firstAttribute="centerX" secondItem="C5Y-uT-lkf" secondAttribute="centerX" id="TZa-Z4-L6c"/>
+                                <constraint firstItem="03J-gc-hqV" firstAttribute="leading" secondItem="C5Y-uT-lkf" secondAttribute="leadingMargin" constant="20" id="Vbo-fg-bsg"/>
+                                <constraint firstItem="PQu-nN-lMv" firstAttribute="top" secondItem="03J-gc-hqV" secondAttribute="top" id="eGe-BA-1Ak"/>
+                                <constraint firstAttribute="bottom" secondItem="Uch-Mu-FXA" secondAttribute="bottom" constant="60" id="gig-3F-aOe"/>
+                                <constraint firstItem="Uch-Mu-FXA" firstAttribute="leading" secondItem="C5Y-uT-lkf" secondAttribute="leading" constant="100" id="m04-AS-LSS"/>
+                                <constraint firstItem="03J-gc-hqV" firstAttribute="top" secondItem="0Tr-2z-ljG" secondAttribute="bottom" constant="8" id="mSw-dC-oha"/>
+                                <constraint firstAttribute="height" constant="600" id="t9c-dR-BA7"/>
+                                <constraint firstItem="PQu-nN-lMv" firstAttribute="leading" secondItem="03J-gc-hqV" secondAttribute="trailing" constant="10" id="x4e-fY-fSQ"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="dfA-D0-Wse" secondAttribute="trailing" constant="10" id="ykh-kW-hnk"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -166,6 +181,7 @@
         </view>
     </objects>
     <resources>
+        <image name="closeBtn" width="50" height="50"/>
         <image name="profilePic" width="853" height="853"/>
     </resources>
 </document>
