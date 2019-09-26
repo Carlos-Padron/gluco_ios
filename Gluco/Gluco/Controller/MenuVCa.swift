@@ -12,6 +12,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //Outlets
     
+
     @IBOutlet weak var tableView: UITableView!
     
     var user: String = "doc"
@@ -23,9 +24,19 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func profileBtn(_ sender: Any) {
-    let showProfile = UserProfileVC()
-        showProfile.modalPresentationStyle = .custom
-        present(showProfile, animated: true)
+    
+        if(user == "paciente"){//paciente
+           let showProfile = UserProfileVC()
+            showProfile.modalPresentationStyle = .custom
+            present(showProfile, animated: true)
+            
+        }else if(user == "doc"){
+           let showProfile = DoctorProfile()
+            showProfile.modalPresentationStyle = .custom
+            present(showProfile, animated: true)
+        }
+        
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,5 +108,6 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+
 
 }

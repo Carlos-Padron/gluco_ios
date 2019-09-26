@@ -79,7 +79,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1R-Ea-IMV">
-                                                    <rect key="frame" x="95" y="31" width="95" height="38.5"/>
+                                                    <rect key="frame" x="95" y="30.5" width="95" height="39"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3L-wJ-BfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="-731"/>
+            <point key="canvasLocation" x="-230.46875" y="-731.25"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="HhH-qf-t25">
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Eh-j2-8O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="574" y="621"/>
+            <point key="canvasLocation" x="173" y="224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cTp-n0-kfl">
@@ -217,7 +217,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pr-o4-ZXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="621"/>
+            <point key="canvasLocation" x="-621" y="224"/>
         </scene>
         <!--Dietas-->
         <scene sceneID="XHg-Sp-NnB">
@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZK-8Q-BmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="-1678"/>
+            <point key="canvasLocation" x="1850" y="-1511"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oiM-Qb-vzv">
@@ -266,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciK-NN-lcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="-1678"/>
+            <point key="canvasLocation" x="1098" y="-1465"/>
         </scene>
         <!--Registrar paciente-->
         <scene sceneID="E1d-zT-rpT">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3h8-wD-RJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="-1678"/>
+            <point key="canvasLocation" x="1850" y="-1511"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hDE-zG-Hpm">
@@ -315,7 +315,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czm-OW-gBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="-1678"/>
+            <point key="canvasLocation" x="1099" y="-1465"/>
         </scene>
         <!--Dietas-->
         <scene sceneID="Sg2-d2-SdT">
@@ -339,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enZ-fU-gVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2295" y="-782"/>
+            <point key="canvasLocation" x="1630" y="-782"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krr-tp-Rpb">
@@ -364,7 +364,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mW-sq-6sV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="-782"/>
+            <point key="canvasLocation" x="925" y="-782"/>
         </scene>
         <!--Mediciones-->
         <scene sceneID="307-9V-vuZ">
@@ -388,7 +388,110 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kf-Ii-bEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="-782"/>
+            <point key="canvasLocation" x="1630" y="-782"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="egL-tS-5kb">
+            <objects>
+                <viewController id="ogC-X9-I7Q" customClass="LoginVC" customModule="Gluco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="klX-TB-hHc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saz-Mu-7Pd">
+                                <rect key="frame" x="283.5" y="343" width="201" height="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.32937228679656982" green="0.32943451404571533" blue="0.32936835289001465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-du-k98" userLabel="mailLIne">
+                                <rect key="frame" x="150" y="481" width="468" height="3"/>
+                                <color key="backgroundColor" red="0.3795611560344696" green="0.51214849948883057" blue="0.61632919311523438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="caO-xi-306"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-zC-7Ai">
+                                <rect key="frame" x="150" y="428" width="468" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="z2O-Hy-bIR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X0-cm-lWr" userLabel="passwordLine">
+                                <rect key="frame" x="150" y="557" width="468" height="3"/>
+                                <color key="backgroundColor" red="0.37956115600000001" green="0.51214849949999997" blue="0.61632919310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="Iwe-Wn-e3t"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwN-0N-NLs" userLabel="password">
+                                <rect key="frame" x="150" y="504" width="468" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CvY-KC-5ho"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gluco" translatesAutoresizingMaskIntoConstraints="NO" id="dr4-GV-MfD">
+                                <rect key="frame" x="40" y="100" width="688" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="DDv-SY-BlV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qd-W2-v64" customClass="roundedButton" customModule="Gluco" customModuleProvider="target">
+                                <rect key="frame" x="234" y="610" width="300" height="72"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5cd-m2-Ot1"/>
+                                    <constraint firstAttribute="height" constant="72" id="8pR-H3-50F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Iniciar Sesión">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY5-l7-LvA">
+                                <rect key="frame" x="310" y="722" width="148" height="53"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Registrarse"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pY5-l7-LvA" firstAttribute="centerX" secondItem="9Qd-W2-v64" secondAttribute="centerX" id="1Vx-0Q-e0a"/>
+                            <constraint firstItem="d6r-du-k98" firstAttribute="centerX" secondItem="bkQ-zC-7Ai" secondAttribute="centerX" id="9yj-ho-hkv"/>
+                            <constraint firstItem="bwN-0N-NLs" firstAttribute="centerX" secondItem="d6r-du-k98" secondAttribute="centerX" id="IyT-jr-PSI"/>
+                            <constraint firstItem="bkQ-zC-7Ai" firstAttribute="centerX" secondItem="Saz-Mu-7Pd" secondAttribute="centerX" id="LB5-MR-mYJ"/>
+                            <constraint firstItem="bkQ-zC-7Ai" firstAttribute="top" secondItem="Saz-Mu-7Pd" secondAttribute="bottom" constant="30" id="Mbj-BW-wY7"/>
+                            <constraint firstItem="pY5-l7-LvA" firstAttribute="top" secondItem="9Qd-W2-v64" secondAttribute="bottom" constant="40" id="NU4-8v-o8U"/>
+                            <constraint firstItem="bwN-0N-NLs" firstAttribute="top" secondItem="d6r-du-k98" secondAttribute="bottom" constant="20" id="NbS-jG-5bY"/>
+                            <constraint firstItem="d6r-du-k98" firstAttribute="top" secondItem="bkQ-zC-7Ai" secondAttribute="bottom" constant="3" id="Npl-70-06l"/>
+                            <constraint firstItem="8X0-cm-lWr" firstAttribute="centerX" secondItem="bwN-0N-NLs" secondAttribute="centerX" id="UKi-8n-GH8"/>
+                            <constraint firstItem="8X0-cm-lWr" firstAttribute="top" secondItem="bwN-0N-NLs" secondAttribute="bottom" constant="3" id="VLj-4Z-9zW"/>
+                            <constraint firstItem="d6r-du-k98" firstAttribute="width" secondItem="bkQ-zC-7Ai" secondAttribute="width" id="XQX-KI-KVd"/>
+                            <constraint firstItem="9Qd-W2-v64" firstAttribute="top" secondItem="8X0-cm-lWr" secondAttribute="bottom" constant="50" id="ZWK-Ar-f1y"/>
+                            <constraint firstItem="dr4-GV-MfD" firstAttribute="leading" secondItem="klX-TB-hHc" secondAttribute="leadingMargin" constant="20" id="d8z-Yw-6Wc"/>
+                            <constraint firstItem="Saz-Mu-7Pd" firstAttribute="top" secondItem="dr4-GV-MfD" secondAttribute="bottom" constant="30" id="f2r-Om-fPT"/>
+                            <constraint firstItem="dr4-GV-MfD" firstAttribute="top" secondItem="Rkw-M0-T6u" secondAttribute="top" constant="80" id="fuA-n6-muj"/>
+                            <constraint firstItem="dr4-GV-MfD" firstAttribute="centerX" secondItem="Saz-Mu-7Pd" secondAttribute="centerX" id="kPj-Mh-YQi"/>
+                            <constraint firstItem="Saz-Mu-7Pd" firstAttribute="centerX" secondItem="klX-TB-hHc" secondAttribute="centerX" id="mkN-lo-q6E"/>
+                            <constraint firstItem="9Qd-W2-v64" firstAttribute="centerX" secondItem="8X0-cm-lWr" secondAttribute="centerX" id="rOy-F4-FHp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dr4-GV-MfD" secondAttribute="trailing" constant="20" id="s3x-fz-h5e"/>
+                            <constraint firstItem="bkQ-zC-7Ai" firstAttribute="leading" secondItem="Rkw-M0-T6u" secondAttribute="leading" constant="150" id="txP-7d-t5X"/>
+                            <constraint firstItem="8X0-cm-lWr" firstAttribute="width" secondItem="bwN-0N-NLs" secondAttribute="width" id="wnP-ZO-CSR"/>
+                            <constraint firstItem="Rkw-M0-T6u" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bkQ-zC-7Ai" secondAttribute="trailing" id="xfu-N7-gTS"/>
+                            <constraint firstItem="bwN-0N-NLs" firstAttribute="width" secondItem="bkQ-zC-7Ai" secondAttribute="width" id="yui-ci-DZJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rkw-M0-T6u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t84-1Z-nKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="-710"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mRR-ZZ-Z7H">
@@ -413,7 +516,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSN-tl-glD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="-782"/>
+            <point key="canvasLocation" x="925" y="-782"/>
         </scene>
         <!--Dietas-->
         <scene sceneID="ifA-vH-cUr">
@@ -437,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oeo-41-N0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2295" y="166"/>
+            <point key="canvasLocation" x="1548" y="-42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EPi-NM-V50">
@@ -462,7 +565,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfG-QQ-QR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="166"/>
+            <point key="canvasLocation" x="850" y="-42"/>
         </scene>
         <!--Doctor-->
         <scene sceneID="Ncp-6e-cje">
@@ -486,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfw-WK-8W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="166"/>
+            <point key="canvasLocation" x="1548" y="-42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HiB-DX-jmm">
@@ -511,7 +614,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s97-57-f8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="166"/>
+            <point key="canvasLocation" x="850" y="-42"/>
         </scene>
         <!--Dietas-->
         <scene sceneID="7TI-OO-Nwl">
@@ -535,7 +638,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c92-WN-jRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="-2006"/>
+            <point key="canvasLocation" x="266" y="-1623"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hNT-D8-Pxi">
@@ -560,7 +663,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1N-E2-9cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-227" y="-2006"/>
+            <point key="canvasLocation" x="-471" y="-1583"/>
         </scene>
         <!--Dietas-->
         <scene sceneID="0hV-sM-Vio">
@@ -584,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkB-HC-EGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="-2006"/>
+            <point key="canvasLocation" x="266" y="-1623"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OYY-RY-lVm">
@@ -609,10 +712,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFG-RL-MOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-227" y="-2006"/>
+            <point key="canvasLocation" x="-471" y="-1583"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Gluco" width="1600" height="900"/>
         <image name="eye" width="34" height="22"/>
         <image name="profilePic" width="853" height="853"/>
         <image name="smackBurger" width="40" height="40"/>
