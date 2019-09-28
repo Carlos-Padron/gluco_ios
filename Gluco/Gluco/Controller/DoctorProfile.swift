@@ -15,7 +15,7 @@ class DoctorProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dismissKB()
-        addressTextFile.layer.borderColor = #colorLiteral(red: 0.9724436402, green: 0.972609818, blue: 0.9724331498, alpha: 1)
+        addressTextFile.layer.borderColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
 
         // Do any additional setup after loading the view.
     }

@@ -20,6 +20,9 @@ class ConsultaVC: UIViewController {
       
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+            // isLogin()
+    }
     
     
     func setUpSWReveal(){
@@ -29,6 +32,11 @@ class ConsultaVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
+    func isLogin(){
+        if (true){
+             self.performSegue(withIdentifier: "LoginSegue", sender: self)
+        }
+    }
 
     
 }

@@ -12,6 +12,9 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.isUserInteractionEnabled = false
+        navigationController?.navigationBar.tintColor = UIColor.clear
 
         // Do any additional setup after loading the view.
     }
