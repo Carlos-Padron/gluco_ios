@@ -58,6 +58,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 let menu = DataService.instance.getUserMenu()[indexPath.row]
                 cell.updateMenu(Menu: menu)
                 cell.layer.backgroundColor = UIColor.clear.cgColor
+                
             }else if(user == "doc"){
                 let menu = DataService.instance.getDoctorMenu()[indexPath.row]
                 cell.updateMenu(Menu: menu)
@@ -108,7 +109,6 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-
     
 
 }

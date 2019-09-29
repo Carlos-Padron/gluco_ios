@@ -25,5 +25,5 @@ class DietasVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
-
+    
 }

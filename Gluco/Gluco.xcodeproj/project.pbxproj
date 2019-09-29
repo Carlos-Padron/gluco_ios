@@ -10,8 +10,10 @@
 		5B02759623347C06000300F7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759523347C06000300F7 /* DataService.swift */; };
 		5B02759823347CA7000300F7 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759723347CA7000300F7 /* menu.swift */; };
 		5B02759E2334824C000300F7 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759D2334824C000300F7 /* menuCell.swift */; };
+		5B202C9B233FE5A500E9062D /* Registro1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B202C9A233FE5A500E9062D /* Registro1VC.swift */; };
 		5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40E66A233B23C80057C2DA /* DoctorProfile.swift */; };
 		5B40E66D233B23C80057C2DA /* DoctorProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B40E66B233B23C80057C2DA /* DoctorProfile.xib */; };
+		5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5730322340833A0062F954 /* CompletarRegistroVC.swift */; };
 		5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */; };
 		5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */; };
 		5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */; };
@@ -37,8 +39,10 @@
 		5B02759523347C06000300F7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B02759723347CA7000300F7 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menu.swift; path = Gluco/Services/menu.swift; sourceTree = SOURCE_ROOT; };
 		5B02759D2334824C000300F7 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
+		5B202C9A233FE5A500E9062D /* Registro1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro1VC.swift; sourceTree = "<group>"; };
 		5B40E66A233B23C80057C2DA /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
 		5B40E66B233B23C80057C2DA /* DoctorProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorProfile.xib; sourceTree = "<group>"; };
+		5B5730322340833A0062F954 /* CompletarRegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletarRegistroVC.swift; sourceTree = "<group>"; };
 		5B76C29B232F25BA00D0BF75 /* Gluco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gluco-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B76C29C232F25BD00D0BF75 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				5BC4961A2337436C0014FA61 /* RegistrarVC.swift */,
 				5BC4961E2337439D0014FA61 /* DoctorVC.swift */,
 				5B8591FF233C84300000AF23 /* LoginVC.swift */,
+				5B202C9A233FE5A500E9062D /* Registro1VC.swift */,
+				5B5730322340833A0062F954 /* CompletarRegistroVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				5BD09415233021870031AAD8 /* circularImage.swift in Sources */,
 				5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */,
 				5B76C2AA232F335000D0BF75 /* Gradient.swift in Sources */,
+				5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */,
 				5B859200233C84300000AF23 /* LoginVC.swift in Sources */,
 				5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */,
 				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
@@ -349,6 +356,7 @@
 				5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */,
 				5B02759623347C06000300F7 /* DataService.swift in Sources */,
 				5B02759823347CA7000300F7 /* menu.swift in Sources */,
+				5B202C9B233FE5A500E9062D /* Registro1VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

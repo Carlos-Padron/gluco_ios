@@ -17,7 +17,7 @@ class ConsultaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWReveal()
-      
+      isLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +37,14 @@ class ConsultaVC: UIViewController {
              self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
     }
-
+    @IBAction func loginPressed(_ sender: UIStoryboardSegue) {
+        
+    }
+//    cell.layer.masksToBounds = true
+//    cell.layer.cornerRadius = 5
+//    cell.layer.borderWidth = 2
+//    cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+//    let borderColor: UIColor = #colorLiteral(red: 0.3792517781, green: 0.514690578, blue: 0.6138443947, alpha: 1)
+//    cell.layer.borderColor = borderColor.cgColor
     
 }
