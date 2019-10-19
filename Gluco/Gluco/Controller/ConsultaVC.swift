@@ -17,15 +17,10 @@ class ConsultaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWReveal()
-      isLogin()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-            // isLogin()
-    }
-    
     
     func setUpSWReveal(){
+        //self.revealViewController()?.navigationItem.leftBarButtonItem = menuBtn
         menuBtn.target = self.revealViewController()
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -37,9 +32,7 @@ class ConsultaVC: UIViewController {
              self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
     }
-    @IBAction func loginPressed(_ sender: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindToConsultas(_ sender: UIStoryboardSegue) {}
 //    cell.layer.masksToBounds = true
 //    cell.layer.cornerRadius = 5
 //    cell.layer.borderWidth = 2

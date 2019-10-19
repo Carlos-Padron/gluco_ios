@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct variables {
+    static var userType: String!
+}

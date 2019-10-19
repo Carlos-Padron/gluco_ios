@@ -10,7 +10,9 @@
 		5B02759623347C06000300F7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759523347C06000300F7 /* DataService.swift */; };
 		5B02759823347CA7000300F7 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759723347CA7000300F7 /* menu.swift */; };
 		5B02759E2334824C000300F7 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759D2334824C000300F7 /* menuCell.swift */; };
+		5B18EEFC235B95AE00CC60CA /* ConsultasNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */; };
 		5B202C9B233FE5A500E9062D /* Registro1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B202C9A233FE5A500E9062D /* Registro1VC.swift */; };
+		5B2E77662343136F00ACE107 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E77652343136F00ACE107 /* AuthService.swift */; };
 		5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40E66A233B23C80057C2DA /* DoctorProfile.swift */; };
 		5B40E66D233B23C80057C2DA /* DoctorProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B40E66B233B23C80057C2DA /* DoctorProfile.xib */; };
 		5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5730322340833A0062F954 /* CompletarRegistroVC.swift */; };
@@ -32,6 +34,7 @@
 		5BF744FF232B492300709904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF744FE232B492300709904 /* Assets.xcassets */; };
 		5BF74502232B492300709904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF74500232B492300709904 /* LaunchScreen.storyboard */; };
 		5BF7450A232B4A9200709904 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BF74509232B4A9200709904 /* GoogleService-Info.plist */; };
+		5BFBF5F623581483000465FC /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBF5F523581483000465FC /* Variables.swift */; };
 		BC52D6936CC1F47B2C2D085F /* Pods_Gluco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1446A4C514085536AE16F5 /* Pods_Gluco.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +42,9 @@
 		5B02759523347C06000300F7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B02759723347CA7000300F7 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menu.swift; path = Gluco/Services/menu.swift; sourceTree = SOURCE_ROOT; };
 		5B02759D2334824C000300F7 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
+		5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultasNC.swift; sourceTree = "<group>"; };
 		5B202C9A233FE5A500E9062D /* Registro1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro1VC.swift; sourceTree = "<group>"; };
+		5B2E77652343136F00ACE107 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5B40E66A233B23C80057C2DA /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
 		5B40E66B233B23C80057C2DA /* DoctorProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorProfile.xib; sourceTree = "<group>"; };
 		5B5730322340833A0062F954 /* CompletarRegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletarRegistroVC.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		5BF74501232B492300709904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BF74503232B492300709904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BF74509232B4A9200709904 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BFBF5F523581483000465FC /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		6B1446A4C514085536AE16F5 /* Pods_Gluco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gluco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F60DE1D924F16205BBF16C6 /* Pods-Gluco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gluco.debug.xcconfig"; path = "Target Support Files/Pods-Gluco/Pods-Gluco.debug.xcconfig"; sourceTree = "<group>"; };
 		E9295EC09B9B42F210B2DDB6 /* Pods-Gluco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gluco.release.xcconfig"; path = "Target Support Files/Pods-Gluco/Pods-Gluco.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				5B02759523347C06000300F7 /* DataService.swift */,
+				5B2E77652343136F00ACE107 /* AuthService.swift */,
+				5BFBF5F523581483000465FC /* Variables.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				5B8591FF233C84300000AF23 /* LoginVC.swift */,
 				5B202C9A233FE5A500E9062D /* Registro1VC.swift */,
 				5B5730322340833A0062F954 /* CompletarRegistroVC.swift */,
+				5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,13 +354,16 @@
 				5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */,
 				5B859200233C84300000AF23 /* LoginVC.swift in Sources */,
 				5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */,
+				5B2E77662343136F00ACE107 /* AuthService.swift in Sources */,
 				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
+				5B18EEFC235B95AE00CC60CA /* ConsultasNC.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
 				5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */,
 				5BC4961923373E520014FA61 /* DietasVC.swift in Sources */,
 				5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */,
 				5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */,
+				5BFBF5F623581483000465FC /* Variables.swift in Sources */,
 				5B02759E2334824C000300F7 /* menuCell.swift in Sources */,
 				5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */,
 				5B02759623347C06000300F7 /* DataService.swift in Sources */,

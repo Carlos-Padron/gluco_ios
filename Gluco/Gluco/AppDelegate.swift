@@ -10,12 +10,77 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
-         class AppDelegate: UIResponder, UIApplicationDelegate {
+         class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        var docRef: DocumentReference!
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            if user != nil{
+//                var userId = user?.email
+//                docRef = Firestore.firestore().document("user/\(userId!)")
+//                docRef.getDocument(completion: { (docSnapshot, error) in
+//                    guard let docSnapshot = docSnapshot, docSnapshot.exists else {return}
+//                    let data = docSnapshot.data()
+//                    variables.userType = data!["tipo"] as? String ?? ""
+//                    if variables.userType == "doctor" {
+//                        let consulta = storyboard.instantiateViewController(withIdentifier: "ConsultaController")
+//                        self.window?.rootViewController = consulta
+//                        self.window?.makeKeyAndVisible()
+//                    }
+//                    else if variables.userType == "paciente"{
+//
+//                    }
+//                })
+//            }else{
+//
+////                self.window?.rootViewController!.performSegue(withIdentifier: "unwindConsultas", sender: self)
+////                let login = storyboard.instantiateViewController(withIdentifier: "LogInController")
+////                self.window?.rootViewController = login
+////                self.window?.makeKeyAndVisible()
+////                let consulta = storyboard.instantiateViewController(withIdentifier: "ConsultaController")// as! SWRevealViewController
+////                let rvc = self.window!.rootViewController as! UINavigationController
+//              // self.window?.rootViewController?.performSegue(withIdentifier: "c", sender: nil)
+////                self.window?.rootViewController = consulta
+////                self.window?.makeKeyAndVisible()
+//            }
+//        }
+//
+        
+
+        
+        let frontNavigationController:UINavigationController
+        let revealController = SWRevealViewController()
+        var mainRevealController = SWRevealViewController()
+        
+        let front = storyboard.instantiateViewController(withIdentifier:  "ConsultaController") as! ConsultaVC
+        let rear = storyboard.instantiateViewController(withIdentifier: "MenuController") as! MenuVC
+        
+        frontNavigationController =  UINavigationController.init(rootViewController: front)
+        frontNavigationController.navigationBar.barTintColor = UIColor.init(red: 12.0/255.0, green: 73.0/255.0, blue: 120.0/255.0 , alpha: 1.0)
+        frontNavigationController.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+            NSAttributedString.Key.font : UIFont(name: "Avenir-Heavy", size: 45)!
+        ]
+        frontNavigationController.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+        
+        revealController.frontViewController = frontNavigationController
+        revealController.rearViewController = rear
+        revealController.delegate = self
+        mainRevealController  = revealController
+        
+        UIApplication.shared.delegate!.window??.rootViewController = mainRevealController
+        
+        
+
         return true
     }
 

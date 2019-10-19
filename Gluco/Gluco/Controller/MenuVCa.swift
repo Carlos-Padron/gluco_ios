@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -109,6 +110,13 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    @IBAction func test(_ sender: Any) {
+          self.performSegue(withIdentifier: "LoginSegue", sender: self)
+    }
     
-
+    @IBAction func logoutTapped(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        self.performSegue(withIdentifier: "LoginSegue", sender: self)
+    }
+    
 }
