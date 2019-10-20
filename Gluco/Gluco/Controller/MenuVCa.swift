@@ -42,9 +42,9 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if(user == "paciente"){//paciente
+        if(variables.userType == "paciente"){//paciente
             return DataService.instance.getUserMenu().count
-        }else if(user == "doc"){
+        }else if(variables.userType == "doctor"){
             return DataService.instance.getDoctorMenu().count
         }else {
             return 0
@@ -55,12 +55,12 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? menuCell{
-            if(user == "paciente"){//Paciente
+            if(variables.userType == "paciente"){//Paciente
                 let menu = DataService.instance.getUserMenu()[indexPath.row]
                 cell.updateMenu(Menu: menu)
                 cell.layer.backgroundColor = UIColor.clear.cgColor
                 
-            }else if(user == "doc"){
+            }else if(variables.userType == "doctor"){
                 let menu = DataService.instance.getDoctorMenu()[indexPath.row]
                 cell.updateMenu(Menu: menu)
                 cell.layer.backgroundColor = UIColor.clear.cgColor
@@ -74,7 +74,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var item = [menu]()
-        if (user == "paciente") {
+        if (variables.userType == "paciente") {
             item = DataService.instance.getUserMenu()
         }else{
             item = DataService.instance.getDoctorMenu()

@@ -10,7 +10,6 @@
 		5B02759623347C06000300F7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759523347C06000300F7 /* DataService.swift */; };
 		5B02759823347CA7000300F7 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759723347CA7000300F7 /* menu.swift */; };
 		5B02759E2334824C000300F7 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B02759D2334824C000300F7 /* menuCell.swift */; };
-		5B18EEFC235B95AE00CC60CA /* ConsultasNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */; };
 		5B202C9B233FE5A500E9062D /* Registro1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B202C9A233FE5A500E9062D /* Registro1VC.swift */; };
 		5B2E77662343136F00ACE107 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E77652343136F00ACE107 /* AuthService.swift */; };
 		5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40E66A233B23C80057C2DA /* DoctorProfile.swift */; };
@@ -42,7 +41,6 @@
 		5B02759523347C06000300F7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B02759723347CA7000300F7 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = menu.swift; path = Gluco/Services/menu.swift; sourceTree = SOURCE_ROOT; };
 		5B02759D2334824C000300F7 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
-		5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultasNC.swift; sourceTree = "<group>"; };
 		5B202C9A233FE5A500E9062D /* Registro1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro1VC.swift; sourceTree = "<group>"; };
 		5B2E77652343136F00ACE107 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5B40E66A233B23C80057C2DA /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				5B8591FF233C84300000AF23 /* LoginVC.swift */,
 				5B202C9A233FE5A500E9062D /* Registro1VC.swift */,
 				5B5730322340833A0062F954 /* CompletarRegistroVC.swift */,
-				5B18EEFB235B95AE00CC60CA /* ConsultasNC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 				5B2E77662343136F00ACE107 /* AuthService.swift in Sources */,
 				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
-				5B18EEFC235B95AE00CC60CA /* ConsultasNC.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
 				5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */,
 				5BC4961923373E520014FA61 /* DietasVC.swift in Sources */,

@@ -32,7 +32,8 @@ class ConsultaVC: UIViewController {
              self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
     }
-    @IBAction func unwindToConsultas(_ sender: UIStoryboardSegue) {}
+    @IBAction func unwindToConsultas(sender: UIStoryboardSegue) {}
+    @IBAction func unwindToConsultasFromRegistro(sender: UIStoryboardSegue) {}
 //    cell.layer.masksToBounds = true
 //    cell.layer.cornerRadius = 5
 //    cell.layer.borderWidth = 2

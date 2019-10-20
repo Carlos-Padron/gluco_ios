@@ -25,5 +25,7 @@ class MedicionVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
+    
+    @IBAction func unwindToMediciones(_ sender: UIStoryboardSegue) {}
 
 }
