@@ -10,7 +10,7 @@ import Foundation
 
 struct DataService {
      static let instance = DataService()
-    
+    //Menu services
     private let doctorMenu = [
         menu(menuTitle: "Consultas", menuIcon: "eye"),
     menu(menuTitle: "Dietas", menuIcon: "health"),
@@ -26,7 +26,6 @@ struct DataService {
     
     ]
     
-    
     func getDoctorMenu()-> [menu] {
         return doctorMenu
     }
@@ -35,4 +34,22 @@ struct DataService {
         return userMenu
     }
     
-}
+    //Doctor/user services
+    
+    private let diabetes = [
+    "Diabetes tipo 1", "Diabetes tipo 2"
+    ]
+    
+    private let genero = [
+    "Masculino", "Femenino"
+    ]
+    
+    func getDiabetes() -> [String]{
+        return diabetes
+    }
+    
+    func getGenero() -> [String]{
+        return genero
+    }
+    
+}//

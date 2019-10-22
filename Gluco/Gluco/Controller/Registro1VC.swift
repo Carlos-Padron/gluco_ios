@@ -49,6 +49,7 @@ class Registro1VC: UIViewController {
         
         spinner.isHidden = false
         spinner.startAnimating()
+        view.isUserInteractionEnabled = false
         
         if password == password2 {
             print("Entr[o a password")
@@ -64,6 +65,7 @@ class Registro1VC: UIViewController {
                             case "usedEmail":
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
+                                self.view.isUserInteractionEnabled = true
                                 print("email en uso")
                                 let alert = UIAlertController(title: "Correo en uso", message: "Prueba crear una cuenta con otro correo",preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
@@ -74,6 +76,7 @@ class Registro1VC: UIViewController {
                                 print("no existe")
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
+                                self.view.isUserInteractionEnabled = true
                                 let alert = UIAlertController(title: "El usuario no existe", message: "Para acceder cree una cuenta",preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
@@ -83,6 +86,7 @@ class Registro1VC: UIViewController {
                                 print("pw mala")
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
+                                self.view.isUserInteractionEnabled = true
                                 let alert = UIAlertController(title: "Contrasenia incorrecta", message: "Ingresa otra vez la contrasenia",preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
@@ -92,6 +96,7 @@ class Registro1VC: UIViewController {
                                 print("pw fea")
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
+                                self.view.isUserInteractionEnabled = true
                                 let alert = UIAlertController(title: "Contrasenia muy débil", message: "Prueba creando otra contrasenia",preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
@@ -101,6 +106,7 @@ class Registro1VC: UIViewController {
                                 print("error")
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
+                                self.view.isUserInteractionEnabled = true
                                 let alert = UIAlertController(title: "Error", message: "Ocurrió un errror, intentelo más tarde",preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
@@ -118,6 +124,7 @@ class Registro1VC: UIViewController {
             }else{
                 self.spinner.stopAnimating()
                 self.spinner.isHidden = true
+                self.view.isUserInteractionEnabled = true
                 let alert = UIAlertController(title: "Error", message: "Por favor introduzca un E/mail válido",preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alert, animated: true, completion: nil)
@@ -125,6 +132,7 @@ class Registro1VC: UIViewController {
         }else{
             self.spinner.stopAnimating()
             self.spinner.isHidden = true
+            self.view.isUserInteractionEnabled = true
             let alert = UIAlertController(title: "Error", message: "Las contrasenias no son iguales",preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true, completion: nil)

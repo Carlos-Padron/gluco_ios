@@ -41,7 +41,7 @@ class CompletarRegistroVC: UIViewController {
 
         self.spinner.isHidden = false
         self.spinner.startAnimating()
-
+        view.isUserInteractionEnabled = false
         let horaConsultaIncio = Calendar.current.date(byAdding: .hour, value: -5, to: consultaInicio.date)//para obetenre la hora
         let horaConsultaFin = Calendar.current.date(byAdding: .hour, value: -5, to: consultaFin.date)// para setear la hora
         let dataToSave: [String: Any] = ["nombre": name, "telefono": phone, "direccion": direccion, "horaEntrada": horaConsultaIncio, "horaSalida": horaConsultaFin]
@@ -63,13 +63,28 @@ class CompletarRegistroVC: UIViewController {
 
                 self.spinner.stopAnimating()
                 self.spinner.isHidden = true
-
+                self.view.isUserInteractionEnabled = true
                 let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intenéntelo más tarde",preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alert, animated: true, completion: nil)
                 //
             }else{
-
+                self.docRef = Firestore.firestore().document("user/\(userId!)")
+                self.docRef?.setData(userType) { (error) in
+                    if error != nil{
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
+                        self.view.isUserInteractionEnabled = true
+                        let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intenéntelo más tarde",preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self.present(alert, animated: true, completion: nil)
+                    }else{
+                        print("bien tipo")
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
+                        self.performSegue(withIdentifier: "toConsultasSegue", sender: self)
+                    }
+                }
             }//
         }
         
@@ -78,18 +93,8 @@ class CompletarRegistroVC: UIViewController {
         
         //self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
 
-        docRef = Firestore.firestore().document("user/\(userId!)")
-        docRef?.setData(userType) { (error) in
-            if error != nil{
-                print("Ocurrió un error al guardar el tipo")
-            }else{
-                print("bien tipo")
-                self.spinner.stopAnimating()
-                self.spinner.isHidden = true
-                self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
-            }
-        }
-self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
+
+        //self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
     }
 
     

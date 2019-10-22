@@ -40,6 +40,7 @@ class LoginVC: UIViewController {
         
         spinner.isHidden = false
         spinner.startAnimating()
+        view.isUserInteractionEnabled = false
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
                 
@@ -50,6 +51,7 @@ class LoginVC: UIViewController {
                     print("email en uso")
                     self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    self.view.isUserInteractionEnabled = true
                     let alert = UIAlertController(title: "Correo en uso", message: "Prueba crear una cuenta con otro correo",preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true, completion: nil)
@@ -59,6 +61,7 @@ class LoginVC: UIViewController {
                     print("no existe")
                      self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    self.view.isUserInteractionEnabled = true
                     let alert = UIAlertController(title: "El usuario no existe", message: "Para acceder cree una cuenta",preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true, completion: nil)
@@ -68,6 +71,7 @@ class LoginVC: UIViewController {
                     print("pw mala")
                      self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    self.view.isUserInteractionEnabled = true
                     let alert = UIAlertController(title: "Contrasenia incorrecta", message: "Ingresa otra vez la contrasenia",preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true, completion: nil)
@@ -77,6 +81,7 @@ class LoginVC: UIViewController {
                     print("pw fea")
                      self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    self.view.isUserInteractionEnabled = true
                     let alert = UIAlertController(title: "Contrasenia muy débil", message: "Prueba creando otra contrasenia",preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true, completion: nil)
@@ -86,6 +91,7 @@ class LoginVC: UIViewController {
                     print("error")
                      self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    self.view.isUserInteractionEnabled = true
                     let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intentelo más tarde",preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default))
                     self.present(alert, animated: true, completion: nil)
