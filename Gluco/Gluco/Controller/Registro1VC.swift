@@ -125,7 +125,7 @@ class Registro1VC: UIViewController {
                 self.spinner.stopAnimating()
                 self.spinner.isHidden = true
                 self.view.isUserInteractionEnabled = true
-                let alert = UIAlertController(title: "Error", message: "Por favor introduzca un E/mail válido",preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Por favor introduzca un e-mail válido",preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(alert, animated: true, completion: nil)
             }

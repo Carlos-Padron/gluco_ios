@@ -18,13 +18,15 @@ import Firebase
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        let db = Firestore.firestore()
+        FirebaseApp.configure(name: "CreatingUsersApp", options: FirebaseApp.app()!.options)
+
+        _ = Firestore.firestore()
         var docRef: DocumentReference!
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+        _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil{
-                var userId = user?.email
+                let userId = user?.email
                 docRef = Firestore.firestore().document("user/\(userId!)")
                 docRef.getDocument(completion: { (docSnapshot, error) in
                     guard let docSnapshot = docSnapshot, docSnapshot.exists else {return}
