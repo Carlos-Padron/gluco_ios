@@ -14,12 +14,18 @@
 		5B2E77662343136F00ACE107 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E77652343136F00ACE107 /* AuthService.swift */; };
 		5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40E66A233B23C80057C2DA /* DoctorProfile.swift */; };
 		5B40E66D233B23C80057C2DA /* DoctorProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B40E66B233B23C80057C2DA /* DoctorProfile.xib */; };
+		5B49451B23614C5F00DD1105 /* dietas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49451A23614C5F00DD1105 /* dietas.swift */; };
+		5B49451D23614C7800DD1105 /* pacientes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49451C23614C7800DD1105 /* pacientes.swift */; };
+		5B49451F23614C8F00DD1105 /* mediciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49451E23614C8F00DD1105 /* mediciones.swift */; };
+		5B4945212361567E00DD1105 /* dietasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4945202361567E00DD1105 /* dietasCell.swift */; };
 		5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5730322340833A0062F954 /* CompletarRegistroVC.swift */; };
 		5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */; };
 		5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */; };
 		5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */; };
 		5B76C2AA232F335000D0BF75 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A9232F335000D0BF75 /* Gradient.swift */; };
 		5B859200233C84300000AF23 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8591FF233C84300000AF23 /* LoginVC.swift */; };
+		5B8F807F2363B95C002E62FC /* AddDietas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F807D2363B95C002E62FC /* AddDietas.swift */; };
+		5B8F80802363B95C002E62FC /* AddDietas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F807E2363B95C002E62FC /* AddDietas.xib */; };
 		5BC4961923373E520014FA61 /* DietasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961823373E520014FA61 /* DietasVC.swift */; };
 		5BC4961B2337436C0014FA61 /* RegistrarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961A2337436C0014FA61 /* RegistrarVC.swift */; };
 		5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4961C2337437E0014FA61 /* MedicionVC.swift */; };
@@ -45,6 +51,10 @@
 		5B2E77652343136F00ACE107 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5B40E66A233B23C80057C2DA /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
 		5B40E66B233B23C80057C2DA /* DoctorProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorProfile.xib; sourceTree = "<group>"; };
+		5B49451A23614C5F00DD1105 /* dietas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = dietas.swift; path = Gluco/Controller/dietas.swift; sourceTree = SOURCE_ROOT; };
+		5B49451C23614C7800DD1105 /* pacientes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = pacientes.swift; path = Gluco/Controller/pacientes.swift; sourceTree = SOURCE_ROOT; };
+		5B49451E23614C8F00DD1105 /* mediciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mediciones.swift; path = Gluco/Controller/mediciones.swift; sourceTree = SOURCE_ROOT; };
+		5B4945202361567E00DD1105 /* dietasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietasCell.swift; sourceTree = "<group>"; };
 		5B5730322340833A0062F954 /* CompletarRegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletarRegistroVC.swift; sourceTree = "<group>"; };
 		5B76C29B232F25BA00D0BF75 /* Gluco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gluco-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B76C29C232F25BD00D0BF75 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -53,6 +63,8 @@
 		5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVCa.swift; sourceTree = "<group>"; };
 		5B76C2A9232F335000D0BF75 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		5B8591FF233C84300000AF23 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5B8F807D2363B95C002E62FC /* AddDietas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDietas.swift; sourceTree = "<group>"; };
+		5B8F807E2363B95C002E62FC /* AddDietas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDietas.xib; sourceTree = "<group>"; };
 		5BC4961823373E520014FA61 /* DietasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietasVC.swift; sourceTree = "<group>"; };
 		5BC4961A2337436C0014FA61 /* RegistrarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarVC.swift; sourceTree = "<group>"; };
 		5BC4961C2337437E0014FA61 /* MedicionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicionVC.swift; sourceTree = "<group>"; };
@@ -108,6 +120,7 @@
 		5B76C2A2232F30A200D0BF75 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F807D2363B95C002E62FC /* AddDietas.swift */,
 				5B40E66A233B23C80057C2DA /* DoctorProfile.swift */,
 				5BC496252337486B0014FA61 /* UserProfileVC.swift */,
 				5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */,
@@ -130,6 +143,7 @@
 				5BD09414233021870031AAD8 /* circularImage.swift */,
 				5BD0CD662330398F00A59451 /* roundedButton.swift */,
 				5B02759D2334824C000300F7 /* menuCell.swift */,
+				5B4945202361567E00DD1105 /* dietasCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				5B02759723347CA7000300F7 /* menu.swift */,
+				5B49451A23614C5F00DD1105 /* dietas.swift */,
+				5B49451C23614C7800DD1105 /* pacientes.swift */,
+				5B49451E23614C8F00DD1105 /* mediciones.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +164,7 @@
 			children = (
 				5BC496262337486B0014FA61 /* UserProfileVC.xib */,
 				5B40E66B233B23C80057C2DA /* DoctorProfile.xib */,
+				5B8F807E2363B95C002E62FC /* AddDietas.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8F80802363B95C002E62FC /* AddDietas.xib in Resources */,
 				5BC496282337486B0014FA61 /* UserProfileVC.xib in Resources */,
 				5BF74502232B492300709904 /* LaunchScreen.storyboard in Resources */,
 				5B40E66D233B23C80057C2DA /* DoctorProfile.xib in Resources */,
@@ -345,22 +364,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC4961B2337436C0014FA61 /* RegistrarVC.swift in Sources */,
+				5B8F807F2363B95C002E62FC /* AddDietas.swift in Sources */,
 				5BD09415233021870031AAD8 /* circularImage.swift in Sources */,
 				5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */,
 				5B76C2AA232F335000D0BF75 /* Gradient.swift in Sources */,
 				5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */,
 				5B859200233C84300000AF23 /* LoginVC.swift in Sources */,
 				5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */,
+				5B49451D23614C7800DD1105 /* pacientes.swift in Sources */,
 				5B2E77662343136F00ACE107 /* AuthService.swift in Sources */,
 				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
+				5B49451B23614C5F00DD1105 /* dietas.swift in Sources */,
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
 				5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */,
 				5BC4961923373E520014FA61 /* DietasVC.swift in Sources */,
 				5B40E66C233B23C80057C2DA /* DoctorProfile.swift in Sources */,
+				5B4945212361567E00DD1105 /* dietasCell.swift in Sources */,
 				5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */,
 				5BFBF5F623581483000465FC /* Variables.swift in Sources */,
 				5B02759E2334824C000300F7 /* menuCell.swift in Sources */,
+				5B49451F23614C8F00DD1105 /* mediciones.swift in Sources */,
 				5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */,
 				5B02759623347C06000300F7 /* DataService.swift in Sources */,
 				5B02759823347CA7000300F7 /* menu.swift in Sources */,

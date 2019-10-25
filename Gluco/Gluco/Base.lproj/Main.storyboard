@@ -1415,6 +1415,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="ozw-yZ-HdK"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="addBtn"/>
+                                                <connections>
+                                                    <action selector="addPressed:" destination="rCL-hq-COc" eventType="touchUpInside" id="u6K-hH-NmO"/>
+                                                </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-U6-JWe">
                                                 <rect key="frame" x="50" y="287.5" width="668" height="297"/>
@@ -1423,7 +1426,7 @@
                                                     <constraint firstAttribute="height" constant="297" id="YLH-og-VbU"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="zSz-us-Zvg">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="zSz-us-Zvg" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="668" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSz-us-Zvg" id="pNK-yE-MRK">
@@ -1436,32 +1439,45 @@
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editBtn" translatesAutoresizingMaskIntoConstraints="NO" id="yjP-4N-HKz">
-                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="Aeo-7E-Xcq"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="bsL-Of-lKA"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteBtn" translatesAutoresizingMaskIntoConstraints="NO" id="XAf-yb-kxT">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-Xo-Yrc">
                                                                     <rect key="frame" x="603" y="12.5" width="50" height="50"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="T3l-dT-6na"/>
-                                                                        <constraint firstAttribute="width" constant="50" id="VB9-7s-C78"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="5Bv-e4-zJd"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="UjA-Lk-BH0"/>
                                                                     </constraints>
-                                                                </imageView>
+                                                                    <state key="normal" backgroundImage="deleteBtn"/>
+                                                                    <connections>
+                                                                        <action selector="deletePressed:" destination="zSz-us-Zvg" eventType="touchUpInside" id="aae-VC-Lkk"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9p-zy-yeo">
+                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="BPZ-lP-S6w"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="n22-yo-1vb"/>
+                                                                    </constraints>
+                                                                    <state key="normal" backgroundImage="editBtn"/>
+                                                                    <connections>
+                                                                        <action selector="editPressed:" destination="zSz-us-Zvg" eventType="touchUpInside" id="VgU-Zj-UEa"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="XAf-yb-kxT" firstAttribute="trailing" secondItem="pNK-yE-MRK" secondAttribute="trailingMargin" id="0uh-vW-Lcw"/>
-                                                                <constraint firstItem="XAf-yb-kxT" firstAttribute="leading" secondItem="yjP-4N-HKz" secondAttribute="trailing" constant="30" id="1fG-n4-fsh"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="5m9-Xo-Yrc" secondAttribute="trailing" id="5dw-lW-Bo4"/>
+                                                                <constraint firstItem="5m9-Xo-Yrc" firstAttribute="centerY" secondItem="pNK-yE-MRK" secondAttribute="centerY" id="DHp-a7-r9O"/>
+                                                                <constraint firstItem="5m9-Xo-Yrc" firstAttribute="leading" secondItem="O9p-zy-yeo" secondAttribute="trailing" constant="30" id="Kpj-Xt-NoF"/>
                                                                 <constraint firstItem="aOj-9c-hHy" firstAttribute="centerY" secondItem="pNK-yE-MRK" secondAttribute="centerY" id="R0g-jt-pvt"/>
-                                                                <constraint firstItem="yjP-4N-HKz" firstAttribute="centerY" secondItem="pNK-yE-MRK" secondAttribute="centerY" id="RPm-4D-eUr"/>
                                                                 <constraint firstItem="aOj-9c-hHy" firstAttribute="leading" secondItem="pNK-yE-MRK" secondAttribute="leadingMargin" constant="20" id="jHW-nV-wp7"/>
-                                                                <constraint firstItem="XAf-yb-kxT" firstAttribute="centerY" secondItem="pNK-yE-MRK" secondAttribute="centerY" id="sXh-9c-KKE"/>
+                                                                <constraint firstItem="O9p-zy-yeo" firstAttribute="centerY" secondItem="pNK-yE-MRK" secondAttribute="centerY" id="xNs-Nq-kqh"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="deleteBtn" destination="5m9-Xo-Yrc" id="C6k-hh-Loy"/>
+                                                            <outlet property="dietaLabel" destination="aOj-9c-hHy" id="1kX-jH-5E6"/>
+                                                            <outlet property="editBtn" destination="O9p-zy-yeo" id="z3q-YZ-2Pp"/>
+                                                        </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="2LD-eo-n1c">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="2LD-eo-n1c" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="103" width="668" height="95"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2LD-eo-n1c" id="ts0-cC-hjh">
@@ -1491,6 +1507,10 @@
                                                                 <constraint firstItem="Ovd-oO-nqr" firstAttribute="top" secondItem="ts0-cC-hjh" secondAttribute="top" constant="10" id="uza-oc-a1O"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="descripcionComidaLabel" destination="Ovd-oO-nqr" id="YXb-lm-rmn"/>
+                                                            <outlet property="tipoComidaLabel" destination="Sd1-H5-5Rc" id="N0o-oh-JFn"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -1499,6 +1519,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="Hn7-nC-qqK"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="rCL-hq-COc" id="mgY-ih-o4B"/>
+                                                    <outlet property="delegate" destination="rCL-hq-COc" id="EhR-3s-7OP"/>
+                                                </connections>
                                             </pickerView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Anf-73-zGm">
                                                 <rect key="frame" x="50" y="614.5" width="668" height="297"/>
@@ -1507,7 +1531,7 @@
                                                     <constraint firstAttribute="height" constant="297" id="dok-b4-ceX"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="YKI-7l-Gy3">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="YKI-7l-Gy3" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="668" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YKI-7l-Gy3" id="7OH-KD-13G">
@@ -1520,32 +1544,40 @@
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editBtn" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-bg-5Nm">
-                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="5fZ-6v-g7S"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="VvJ-J2-Hta"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteBtn" translatesAutoresizingMaskIntoConstraints="NO" id="Zf9-5S-9d2">
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTc-iz-5p7">
                                                                     <rect key="frame" x="603" y="12.5" width="50" height="50"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="LzN-bu-gl7"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="ums-Zs-Wgh"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="YZh-wO-rYK"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="xxI-hY-ltk"/>
                                                                     </constraints>
-                                                                </imageView>
+                                                                    <state key="normal" backgroundImage="deleteBtn"/>
+                                                                    <connections>
+                                                                        <action selector="deletePressed:" destination="YKI-7l-Gy3" eventType="touchUpInside" id="hgM-9o-XLi"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qE-sK-pMv">
+                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="PdT-rz-aSj"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="y5v-P7-opk"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="editBtn"/>
+                                                                    <connections>
+                                                                        <action selector="editPressed:" destination="YKI-7l-Gy3" eventType="touchUpInside" id="IV5-TD-hxg"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Zf9-5S-9d2" firstAttribute="trailing" secondItem="7OH-KD-13G" secondAttribute="trailingMargin" id="1oe-Ex-ueD"/>
                                                                 <constraint firstItem="w8W-fF-mcd" firstAttribute="centerY" secondItem="7OH-KD-13G" secondAttribute="centerY" id="Al3-4j-SJ8"/>
+                                                                <constraint firstItem="tTc-iz-5p7" firstAttribute="trailing" secondItem="7OH-KD-13G" secondAttribute="trailingMargin" id="Q2H-qC-GtS"/>
                                                                 <constraint firstItem="w8W-fF-mcd" firstAttribute="leading" secondItem="7OH-KD-13G" secondAttribute="leadingMargin" constant="20" id="QYe-h2-tll"/>
-                                                                <constraint firstItem="Zf9-5S-9d2" firstAttribute="centerY" secondItem="7OH-KD-13G" secondAttribute="centerY" id="f4p-1i-ebG"/>
-                                                                <constraint firstItem="Zf9-5S-9d2" firstAttribute="leading" secondItem="PKj-bg-5Nm" secondAttribute="trailing" constant="30" id="fRN-zw-daY"/>
-                                                                <constraint firstItem="PKj-bg-5Nm" firstAttribute="centerY" secondItem="7OH-KD-13G" secondAttribute="centerY" id="gY4-94-0aR"/>
+                                                                <constraint firstItem="tTc-iz-5p7" firstAttribute="leading" secondItem="5qE-sK-pMv" secondAttribute="trailing" constant="30" id="a3O-QV-uFh"/>
+                                                                <constraint firstItem="tTc-iz-5p7" firstAttribute="centerY" secondItem="7OH-KD-13G" secondAttribute="centerY" id="iNu-GZ-K1P"/>
+                                                                <constraint firstItem="5qE-sK-pMv" firstAttribute="centerY" secondItem="7OH-KD-13G" secondAttribute="centerY" id="xlQ-ut-6rs"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="v5D-cl-77G">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="v5D-cl-77G" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="103" width="668" height="95"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v5D-cl-77G" id="29h-sW-a0K">
@@ -1585,7 +1617,7 @@
                                                     <constraint firstAttribute="height" constant="297" id="Udk-Eo-ZGn"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="kdh-VM-f6s">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="kdh-VM-f6s" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="668" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kdh-VM-f6s" id="CbI-dJ-Tun">
@@ -1598,32 +1630,49 @@
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editBtn" translatesAutoresizingMaskIntoConstraints="NO" id="bA1-PL-bhE">
-                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="8Bl-05-vw9"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="gwB-EW-r2Y"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteBtn" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-MZ-hFy">
+                                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteBtn" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-MZ-hFy">
                                                                     <rect key="frame" x="603" y="12.5" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="fpQ-Oa-0fH"/>
                                                                         <constraint firstAttribute="width" constant="50" id="nlJ-Ac-4CC"/>
                                                                     </constraints>
                                                                 </imageView>
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvR-mC-tip">
+                                                                    <rect key="frame" x="603" y="12.5" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="pgP-DF-3KL"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="pj3-lW-EME"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="deleteBtn"/>
+                                                                    <connections>
+                                                                        <action selector="deletePressed:" destination="kdh-VM-f6s" eventType="touchUpInside" id="37E-Uu-AcC"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ee-dj-tlA">
+                                                                    <rect key="frame" x="523" y="12.5" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="4B2-lm-kYF"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="vH7-t2-JSZ"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="editBtn"/>
+                                                                    <connections>
+                                                                        <action selector="editPressed:" destination="kdh-VM-f6s" eventType="touchUpInside" id="HvJ-h5-uIx"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="QvR-mC-tip" firstAttribute="centerY" secondItem="CbI-dJ-Tun" secondAttribute="centerY" id="3uc-l2-JN1"/>
                                                                 <constraint firstItem="fEh-MZ-hFy" firstAttribute="centerY" secondItem="CbI-dJ-Tun" secondAttribute="centerY" id="3vE-ej-oBw"/>
                                                                 <constraint firstItem="1fC-rv-dRe" firstAttribute="centerY" secondItem="CbI-dJ-Tun" secondAttribute="centerY" id="7de-XD-2ow"/>
                                                                 <constraint firstItem="fEh-MZ-hFy" firstAttribute="trailing" secondItem="CbI-dJ-Tun" secondAttribute="trailingMargin" id="FqS-5q-gSW"/>
-                                                                <constraint firstItem="fEh-MZ-hFy" firstAttribute="leading" secondItem="bA1-PL-bhE" secondAttribute="trailing" constant="30" id="GKD-R8-os3"/>
-                                                                <constraint firstItem="bA1-PL-bhE" firstAttribute="centerY" secondItem="CbI-dJ-Tun" secondAttribute="centerY" id="ucf-aC-aml"/>
+                                                                <constraint firstItem="QvR-mC-tip" firstAttribute="trailing" secondItem="CbI-dJ-Tun" secondAttribute="trailingMargin" id="PQj-U2-2Xg"/>
+                                                                <constraint firstItem="1ee-dj-tlA" firstAttribute="centerY" secondItem="CbI-dJ-Tun" secondAttribute="centerY" id="T2Q-Qa-ZaW"/>
+                                                                <constraint firstItem="QvR-mC-tip" firstAttribute="leading" secondItem="1ee-dj-tlA" secondAttribute="trailing" constant="30" id="qd3-dG-bJS"/>
                                                                 <constraint firstItem="1fC-rv-dRe" firstAttribute="leading" secondItem="CbI-dJ-Tun" secondAttribute="leadingMargin" constant="20" id="wni-5B-Up9"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="QLd-MK-Bmr">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="QLd-MK-Bmr" customClass="dietasCell" customModule="Gluco" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="103" width="668" height="95"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QLd-MK-Bmr" id="lMe-7k-2Om">
@@ -1707,7 +1756,9 @@
                     </navigationItem>
                     <size key="freeformSize" width="768" height="1370"/>
                     <connections>
+                        <outlet property="addDieta" destination="060-Q2-Zml" id="RNa-ai-b7W"/>
                         <outlet property="menuBtn" destination="Yhf-fr-egm" id="8vN-0Z-ibX"/>
+                        <outlet property="pacientePicker" destination="dk8-de-2uR" id="HJ1-Ul-xwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkB-HC-EGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1751,6 +1802,6 @@
         <image name="smackBurger" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d1T-Y7-rZI"/>
+        <segue reference="KPr-9U-TsR"/>
     </inferredMetricsTieBreakers>
 </document>

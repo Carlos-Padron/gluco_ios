@@ -161,6 +161,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                             print("bien tipo")
                                             self.spinner.stopAnimating()
                                             self.spinner.isHidden = true
+                                            self.view.isUserInteractionEnabled = false
                                             let alert = UIAlertController(title: "Bien", message: "Usuario creado",preferredStyle: .alert)
                                             alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                             self.present(alert, animated: true, completion: nil)

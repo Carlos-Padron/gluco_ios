@@ -16,7 +16,6 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var user: String = "doc"
     
     override func viewDidLoad() {
         self.revealViewController().rearViewRevealWidth = (self.view.frame.size.width - 150)
@@ -26,12 +25,12 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func profileBtn(_ sender: Any) {
     
-        if(user == "paciente"){//paciente
+        if(variables.userType == "paciente"){//paciente
            let showProfile = UserProfileVC()
             showProfile.modalPresentationStyle = .custom
             present(showProfile, animated: true)
             
-        }else if(user == "doc"){
+        }else if(variables.userType == "doctor"){
            let showProfile = DoctorProfile()
             showProfile.modalPresentationStyle = .custom
             present(showProfile, animated: true)
@@ -111,7 +110,9 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func test(_ sender: Any) {
-          self.performSegue(withIdentifier: "LoginSegue", sender: self)
+          DataService.instance.getPaccientesFromFB()
+       //print(DataService.instance.getPacientes())
+        //print(DataService.instance.getUserMenu())
     }
     
     @IBAction func logoutTapped(_ sender: UIButton) {

@@ -7,14 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
-struct DataService {
+class DataService {
      static let instance = DataService()
+    //Variables
+    
+    private var docRef: DocumentReference? = nil
+    
+    
     //Menu services
     private let doctorMenu = [
         menu(menuTitle: "Consultas", menuIcon: "eye"),
-    menu(menuTitle: "Dietas", menuIcon: "health"),
-    menu(menuTitle: "Registrar paciente", menuIcon: "userPlus")
+        menu(menuTitle: "Dietas", menuIcon: "health"),
+        menu(menuTitle: "Registrar paciente", menuIcon: "userPlus")
     
     
     ]
@@ -51,5 +57,34 @@ struct DataService {
     func getGenero() -> [String]{
         return genero
     }
+    
+    //pacientes services
+    
+    private var pacientesArray = [String]()
+    
+    func getPacientes() -> [String]{
+        return pacientesArray
+    }
+    
+    
+    
+    
+    //Functions
+    
+    func getPaccientesFromFB(){
+        let id = Auth.auth().currentUser?.email
+        Firestore.firestore().collection("paciente").whereField("doctor", isEqualTo: id! ).getDocuments { (querySnapshot, error) in
+            if let error = error{
+                print("error al traer docs")
+            }else{
+                for document in querySnapshot!.documents {
+                    
+                    let nombre = document.data()["nombre"] as! String
+                    self.pacientesArray.append(nombre)
+                }
+            }
+        }
+    }
+    
     
 }//

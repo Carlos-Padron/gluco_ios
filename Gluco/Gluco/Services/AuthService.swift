@@ -13,36 +13,7 @@ import Firebase
 class AuthService {
     
     static let instance = AuthService()
-    
-    let defaults = UserDefaults.standard
-    
-    var isLoggin: Bool{
-        get{
-            return defaults.bool(forKey: "loggedIn")
-        }
-        set{
-            defaults.set(newValue, forKey: "loggedIn")
-        }
-    }
-    
-    var isDoctor: Bool{
-        get{
-            return defaults.bool(forKey: "user")
-        }
-        set{
-            defaults.set(newValue, forKey: "user")
-        }
-    }
-    
-    var userEmail: String{
-        get{
-            return defaults.value(forKey: "userEmail") as! String
-        }
-        set{
-            defaults.set(newValue, forKey: "userEmail")
-        }
-    }
-    
+
     
     
     func errorHandler (error: NSError) -> String{
@@ -75,5 +46,8 @@ class AuthService {
     return ""
     }
     
+    
+    
+   
     
 }
