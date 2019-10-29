@@ -64,7 +64,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         if genero == nil {genero = DataService.instance.getGenero()[0]}
         if diabetes == nil {diabetes = DataService.instance.getDiabetes()[0]}
         
-        let dataToSave: [String: Any] = ["nombre": name, "genero": genero!, "nacimiento": nacimientoPicker.date, "diabetes": diabetes!, "doctor": docId]
+        let dataToSave: [String: Any] = ["nombre": name, "genero": genero!, "nacimiento": nacimientoPicker.date, "diabetes": diabetes!, "doctor": docId ,"email": email]
         let userType: [String: Any] = ["tipo":"paciente"]
 
         if password == password2{

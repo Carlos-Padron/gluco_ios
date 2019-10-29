@@ -21,7 +21,8 @@ import Firebase
         FirebaseApp.configure(name: "CreatingUsersApp", options: FirebaseApp.app()!.options)
 
         setInitialViewController()
-        getPacientes()              
+        getPacientes()
+        //DataService.instance.getDieta1Query()
         
        
         

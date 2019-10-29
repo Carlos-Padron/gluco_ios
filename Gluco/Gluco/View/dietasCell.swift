@@ -42,40 +42,41 @@ class dietasCell: UITableViewCell {
     
     func fillTable(tipoComida: String, descripcion:String){
         self.tipoComidaLabel.text = tipoComida
-        self.descripcionComidaLabel.text = description
+        self.descripcionComidaLabel.text = descripcion
+        print("seteando tabla")
     }
     
     func setHeader(nombreDieta: String){
         self.dietaLabel.text = nombreDieta
-        self.deleteBtn.setImage(deleteImg, for: .normal)
-        self.editBtn.setImage(editImg, for: .normal)
-        
+        self.deleteBtn.setBackgroundImage(deleteImg, for: .normal)
+        self.editBtn.setBackgroundImage(editImg, for: .normal)
+        print("seteando header")
     }
     
 
 
     @IBAction func deletePressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            
+            print("1")
         }
         if sender.tag == 2 {
-            
+            print("2")
         }
         if sender.tag == 3 {
-            
+            print("3")
         }
     }
     
     
     @IBAction func editPressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            
+            print("1")
         }
         if sender.tag == 2 {
-            
+            print("2")
         }
         if sender.tag == 3 {
-            
+            print("3")
         }
     }
     
@@ -112,12 +113,9 @@ class dietasCell: UITableViewCell {
                 //hacer inserciones
             }
         }
-        
-        
-
     }
     
-
+    
     
     
     

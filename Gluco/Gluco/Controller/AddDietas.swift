@@ -22,11 +22,14 @@ class AddDietas: UIViewController {
     var dieta1: DocumentReference!
     var dieta2: DocumentReference!
     var dieta3: DocumentReference!
+    var email : String!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.alimentosTextField.isHidden = false
+        print(email!)
         // Do any additional setup after loading the view.
     }
 
@@ -41,46 +44,135 @@ class AddDietas: UIViewController {
         guard let desayuno = desayunoTextField.text, !desayuno.isEmpty else {return}
         guard let comida = comidaTextField.text, !comida.isEmpty  else {return}
         guard let cena = cenaTextFiled.text, !cena.isEmpty else {return}
-        guard let alimentos = alimentosTextField.text, !alimentos.isEmpty else {return}
+         let alimentos = alimentosTextField.text//, !alimentos.isEmpty else {return}
         
-        
-        
-        
-        dieta1 = Firestore.firestore().document("dietas/dieta1")
+
+        dieta1 = Firestore.firestore().document("dietas/\(email!)-dieta1")
+        dieta2 = Firestore.firestore().document("dietas/\(email!)-dieta2")
+        dieta3 = Firestore.firestore().document("dietas/\(email!)-dieta3")
         dieta1.getDocument { (docSnapshot, error) in
-            let doc1 = docSnapshot
-            if doc1!.exists{
-                //obtenemos los datos
+            if let doc1 = docSnapshot, doc1.exists {
+                self.dieta2.getDocument(completion: { (docSnapshot, error) in
+                    if let doc2 = docSnapshot, doc2.exists {
+                        let dataToSave:[String: Any] = ["nombreDieta": dietaNombre , "almuerzo": desayuno, "comida": comida, "cena": cena, "comidaExtra": alimentos!, "email": self.email!, "numeroDieta": 3 ]
+                        
+                        self.dieta3.setData(dataToSave, completion: { (error) in
+                            if error != nil {
+                                let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intenéntelo más tarde",preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                            }else{
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        })
+                    }else{
+                        let dataToSave:[String: Any] = ["nombreDieta": dietaNombre , "almuerzo": desayuno, "comida": comida, "cena": cena, "comidaExtra": alimentos!, "email": self.email!, "numeroDieta": 2 ]
+                        
+                        self.dieta2.setData(dataToSave, completion: { (error) in
+                            if error != nil {
+                                let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intenéntelo más tarde",preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                            }else{
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        })
+                    }
+                })
+                
             }else{
-                //hacer inserciones
-            }
-        }
+                let dataToSave:[String: Any] = ["nombreDieta": dietaNombre , "almuerzo": desayuno, "comida": comida, "cena": cena, "comidaExtra": alimentos!, "email": self.email!, "numeroDieta": 1 ]
+                
+                self.dieta1.setData(dataToSave, completion: { (error) in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Ocurrió un error, intenéntelo más tarde",preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }else{
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }//else
+        }//fin getDoc
+
         
-        dieta2 = Firestore.firestore().document("dietas/dieta2")
-        dieta2.getDocument { (docSnapshot, error) in
-            let doc2 = docSnapshot
-            if doc2!.exists{
-                //obtener datos
-            }else{
-                //hacer inserciones
-            }
-        }
-        
-        
-        dieta3 = Firestore.firestore().document("dietas/dieta2")
-        dieta3.getDocument { (docSnapshot, error) in
-            let doc3 = docSnapshot
-            if doc3!.exists {
-                //obtener datos
-            }else{
-                //hacer inserciones
-            }
-        }
-        
-        
-        
+    }//fin del addDieta
+    
+    @IBAction func closePressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     
+    
 
+    
+//    func getDieta10(){
+//        Firestore.firestore().collection("dietas").whereField("numeroDieta", isEqualTo: 1).whereField("email", isEqualTo: email!)
+//            .getDocuments { (querySnapshot, error) in
+//                if let error = error {
+//                    print("Error getting documents: \(error)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let nombre = document.data()["nombreDieta"]
+//                        let almuerzo = document.data()["almuerzo"]
+//                        let comida = document.data()["comida"]
+//                        let cena = document.data()["cena"]
+//                        let comidaExtra = document.data()["comidaExtra"]
+//
+//                        let dietaUno = dietas(nombre: nombre as! String, almuerzo: almuerzo as! String, comida: comida as! String, cena: cena as! String, comidaExtra: comidaExtra as! String )
+//
+//                        var array = DataService.instance.getDieta1()
+//                        array.append(dietaUno)
+//                    }
+//                }
+//            }
+//        }//
+    
+//    func getDieta2(){
+//        Firestore.firestore().collection("dietas").whereField("numeroDieta", isEqualTo: 2).whereField("email", isEqualTo: email!)
+//            .getDocuments { (querySnapshot, error) in
+//                if let error = error {
+//                    print("Error getting documents: \(error)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let nombre = document.data()["nombreDieta"]
+//                        let almuerzo = document.data()["almuerzo"]
+//                        let comida = document.data()["comida"]
+//                        let cena = document.data()["cena"]
+//                        let comidaExtra = document.data()["comidaExtra"]
+//
+//                        let dietaDos = dietas(nombre: nombre as! String, almuerzo: almuerzo as! String, comida: comida as! String, cena: cena as! String, comidaExtra: comidaExtra as! String )
+//
+//                        var array = DataService.instance.getDieta2()
+//                        array.append(dietaDos)
+//                    }
+//                }
+//            }
+//        }//
+//
+//    func getDieta3(){
+//        Firestore.firestore().collection("dietas").whereField("numeroDieta", isEqualTo: 3).whereField("email", isEqualTo: email!)
+//            .getDocuments { (querySnapshot, error) in
+//                if let error = error {
+//                    print("Error getting documents: \(error)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let nombre = document.data()["nombreDieta"]
+//                        let almuerzo = document.data()["almuerzo"]
+//                        let comida = document.data()["comida"]
+//                        let cena = document.data()["cena"]
+//                        let comidaExtra = document.data()["comidaExtra"]
+//
+//                        let dietaTres = dietas(nombre: nombre as! String, almuerzo: almuerzo as! String, comida: comida as! String, cena: cena as! String, comidaExtra: comidaExtra as! String )
+//
+//                        var array = DataService.instance.getDieta3()
+//                        array.append(dietaTres)
+//                    }
+//                }
+//            }
+//        }//
+    
 }

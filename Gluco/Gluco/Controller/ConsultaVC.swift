@@ -17,6 +17,7 @@ class ConsultaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSWReveal()
+        //DataService.instance.getDieta1Query()
     }
     
     func setUpSWReveal(){

@@ -13,15 +13,13 @@ class dietas {
     private (set) var comida: String?
     private (set) var cena: String?
     private (set) var comidaExtra:String?
-    private (set) var email:String?
+  //  private (set) var email:String?
     
-    init(nombre: String, almuerzo:String, comida:String, cena:String, comidaExtra:String, email:String) {
+    init(nombre: String, almuerzo:String, comida:String, cena:String, comidaExtra:String) {
         self.nombre = nombre
         self.almuerzo = almuerzo
         self.comida = comida
         self.cena = cena
         self.comidaExtra = comidaExtra
-        
-        
     }
 }
