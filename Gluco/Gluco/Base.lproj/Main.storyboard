@@ -1402,7 +1402,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1266"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecionar paciente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh7-0b-0SX">
-                                                <rect key="frame" x="50" y="20" width="353.5" height="55"/>
+                                                <rect key="frame" x="50" y="20" width="354" height="55"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="40"/>
                                                 <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1434,7 +1434,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dieta x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOj-9c-hHy">
-                                                                    <rect key="frame" x="35" y="17" width="94.5" height="41"/>
+                                                                    <rect key="frame" x="35" y="17" width="95" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1551,7 +1551,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dieta x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8W-fF-mcd">
-                                                                    <rect key="frame" x="35" y="17" width="94.5" height="41"/>
+                                                                    <rect key="frame" x="35" y="17" width="95" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1653,7 +1653,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dieta x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fC-rv-dRe">
-                                                                    <rect key="frame" x="35" y="17" width="94.5" height="41"/>
+                                                                    <rect key="frame" x="35" y="17" width="95" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                                                     <color key="textColor" red="0.37925177809999999" green="0.51469057799999995" blue="0.61384439469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1749,6 +1749,13 @@
                                                     <outlet property="delegate" destination="rCL-hq-COc" id="WF5-Uh-dBe"/>
                                                 </connections>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d4-hX-8zx">
+                                                <rect key="frame" x="584" y="17.5" width="60" height="60"/>
+                                                <state key="normal" backgroundImage="searchBtn"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="rCL-hq-COc" eventType="touchUpInside" id="CFK-aq-ybl"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1758,18 +1765,25 @@
                                             <constraint firstItem="Anf-73-zGm" firstAttribute="leading" secondItem="Rvh-DG-ajW" secondAttribute="leading" constant="50" id="CZZ-Wt-9Wh"/>
                                             <constraint firstItem="ecI-U6-JWe" firstAttribute="leading" secondItem="Rvh-DG-ajW" secondAttribute="leading" constant="50" id="EkC-SA-1av"/>
                                             <constraint firstAttribute="trailing" secondItem="auX-BA-cRh" secondAttribute="trailing" constant="50" id="FSk-On-E9q"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="firstBaseline" secondItem="060-Q2-Zml" secondAttribute="firstBaseline" id="FeE-Wc-A4U"/>
                                             <constraint firstItem="bh7-0b-0SX" firstAttribute="top" secondItem="Rvh-DG-ajW" secondAttribute="top" constant="20" id="G3S-YJ-MGc"/>
                                             <constraint firstItem="dk8-de-2uR" firstAttribute="top" secondItem="060-Q2-Zml" secondAttribute="bottom" constant="30" id="GvM-m4-GeK"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="width" secondItem="060-Q2-Zml" secondAttribute="width" id="OV5-l1-Zmz"/>
                                             <constraint firstItem="auX-BA-cRh" firstAttribute="top" secondItem="Anf-73-zGm" secondAttribute="bottom" constant="30" id="PLK-Dj-8G4"/>
                                             <constraint firstItem="bh7-0b-0SX" firstAttribute="leading" secondItem="Rvh-DG-ajW" secondAttribute="leading" constant="50" id="UHT-dC-ntc"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="baseline" secondItem="060-Q2-Zml" secondAttribute="baseline" id="UOw-U8-37y"/>
                                             <constraint firstItem="ecI-U6-JWe" firstAttribute="top" secondItem="dk8-de-2uR" secondAttribute="bottom" constant="30" id="UqS-jR-rud"/>
+                                            <constraint firstItem="060-Q2-Zml" firstAttribute="leading" secondItem="0d4-hX-8zx" secondAttribute="trailing" constant="14" id="Zvq-JH-Uut"/>
                                             <constraint firstAttribute="trailing" secondItem="Anf-73-zGm" secondAttribute="trailing" constant="50" id="do9-vT-Ud1"/>
                                             <constraint firstAttribute="bottom" secondItem="auX-BA-cRh" secondAttribute="bottom" constant="27.5" id="dtu-fk-nnt"/>
                                             <constraint firstItem="dk8-de-2uR" firstAttribute="top" secondItem="bh7-0b-0SX" secondAttribute="bottom" constant="32.5" id="fIS-4i-bwf"/>
                                             <constraint firstItem="060-Q2-Zml" firstAttribute="centerY" secondItem="bh7-0b-0SX" secondAttribute="centerY" id="i1k-6E-Yss"/>
                                             <constraint firstAttribute="trailing" secondItem="ecI-U6-JWe" secondAttribute="trailing" constant="50" id="ikZ-1t-8c4"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="width" secondItem="0d4-hX-8zx" secondAttribute="height" multiplier="1:1" id="kU6-gU-B0f"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="centerY" secondItem="060-Q2-Zml" secondAttribute="centerY" id="nSR-wV-rde"/>
                                             <constraint firstItem="auX-BA-cRh" firstAttribute="leading" secondItem="Rvh-DG-ajW" secondAttribute="leading" constant="50" id="pT4-Cd-BgY"/>
                                             <constraint firstAttribute="trailing" secondItem="dk8-de-2uR" secondAttribute="trailing" constant="50" id="sgG-9l-NC0"/>
+                                            <constraint firstItem="0d4-hX-8zx" firstAttribute="height" secondItem="060-Q2-Zml" secondAttribute="height" id="tAm-Lx-7Ob"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2938,6 +2952,7 @@ rbiwuLUAAAAAAAACAQAAAAAAAABZAAAAAAAAAAAAAAAAAAC4tw
         <image name="exit" width="48" height="37"/>
         <image name="eye" width="34" height="22"/>
         <image name="profilePic" width="853" height="853"/>
+        <image name="searchBtn" width="50" height="50"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

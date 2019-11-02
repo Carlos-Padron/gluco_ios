@@ -158,10 +158,11 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                             alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                             self.present(alert, animated: true, completion: nil)
                                         }else{
+                                            DataService.instance.getPaccientesFromFB()
                                             print("bien tipo")
                                             self.spinner.stopAnimating()
                                             self.spinner.isHidden = true
-                                            self.view.isUserInteractionEnabled = false
+                                            self.view.isUserInteractionEnabled = true
                                             let alert = UIAlertController(title: "Bien", message: "Usuario creado",preferredStyle: .alert)
                                             alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                             self.present(alert, animated: true, completion: nil)

@@ -261,6 +261,10 @@ class DataService {
                 self.nombreDieta1 = dietaUno.nombre!
 
                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+            }else{
+                 self.dieta1Array.removeAll()
+                self.nombreDieta1 = nil
+                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
             }
         }
     }
@@ -289,6 +293,10 @@ class DataService {
                 self.nombreDieta2 = dietaDos.nombre!
                 print("se llegó a la notificacion")
                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+            }else{
+                self.dieta2Array.removeAll()
+                self.nombreDieta2 = nil
+                NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
             }
         }
     }
@@ -316,6 +324,10 @@ class DataService {
                 print("fill d3")
                 print(self.dieta3Array)
                  NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+            }else{
+                self.dieta3Array.removeAll()
+                self.nombreDieta3 = nil
+                NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
             }
         }
     }

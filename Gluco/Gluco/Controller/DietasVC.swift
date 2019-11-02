@@ -62,13 +62,21 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     @IBAction func addPressed(_ sender: Any) {
-        NotificationCenter.default.addObserver(self, selector: #selector(DietasVC.reload), name: NSNotification.Name("reload"), object: nil)
+        if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
+        buscarDietas(email: email)
         agregarDietas()
     }
     
+    @IBAction func searchPressed(_ sender: UIButton) {
+        if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
+        print(email)
+        buscarDietas(email: email)
+        
+    }
     func agregarDietas(){
         
         if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
+        print(email)
         Firestore.firestore().collection("dietas").whereField("email", isEqualTo: email).getDocuments { (querySnapshot, error) in
             if let error = error{
                 print("error al traer docs")
@@ -94,8 +102,8 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func buscarDietas(email:String){
         DataService.instance.fillDieta1(email: email)
-         DataService.instance.fillDieta1(email: email)
-         DataService.instance.fillDieta1(email: email)
+         DataService.instance.fillDieta2(email: email)
+         DataService.instance.fillDieta3(email: email)
     }
     
     
@@ -118,6 +126,7 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             print("algo")
             self.email = DataService.instance.getPacientes()[row].email
+        print(email)
     }
     
 
