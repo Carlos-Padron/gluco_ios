@@ -24,6 +24,7 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     //Variable
     var email:String!
     var dietaCount: Int!
+    var observer: NSObjectProtocol?
    // private var docRef: DocumentReference? = nil
 
     override func viewDidLoad() {
@@ -33,7 +34,26 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         setUpSWReveal()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         NotificationCenter.default.addObserver(self, selector: #selector(DietasVC.reload), name: NSNotification.Name("reload"), object: nil)
+        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "agrego"), object: UIApplication.shared, queue: OperationQueue.main, using: { (Notification) in
+            print("jalo")
+            self.reload()
+        })
 
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "reload"), object: nil)
+        if let _ = observer{
+            NotificationCenter.default.removeObserver(observer!)
+        }
+    }
+    
+    
+
+    
     func setUpSWReveal(){
         menuBtn.target = self.revealViewController()
         menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -42,6 +62,7 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     @IBAction func addPressed(_ sender: Any) {
+        NotificationCenter.default.addObserver(self, selector: #selector(DietasVC.reload), name: NSNotification.Name("reload"), object: nil)
         agregarDietas()
     }
     
@@ -71,6 +92,11 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             }
     }
     
+    func buscarDietas(email:String){
+        DataService.instance.fillDieta1(email: email)
+         DataService.instance.fillDieta1(email: email)
+         DataService.instance.fillDieta1(email: email)
+    }
     
     
     //UIPicker Protocols
@@ -94,10 +120,7 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             self.email = DataService.instance.getPacientes()[row].email
     }
     
-    
-    
-    
-    
+
     //UITableView Protocols
     
     func setUpTables(){
@@ -116,13 +139,13 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == dieta1Tableview{
-            return  4//DataService.instance.getDieta1().count
+                return DataService.instance.getDieta1().count
         }
         if tableView == dieta2Tableview{
-            return 4//DataService.instance.getDieta2().count
+                return DataService.instance.getDieta2().count
         }
         if tableView == dieta3Tableview{
-            return 4//DataService.instance.getDieta3().count
+                return DataService.instance.getDieta3().count
         }
         return 0
     }
@@ -132,26 +155,36 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         
         if tableView == self.dieta1Tableview{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as? dietasCell{
-                let dieta1Content = DataService.instance.getDieta1()[indexPath.row]
-                let comida = DataService.instance.getTipoComida()[indexPath.row]
-                cell.fillTable(tipoComida: comida , descripcion:dieta1Content )
-                return cell
+                let dieta1Content = DataService.instance.getDieta1()
+                if dieta1Content.count != 0 {
+                    print(DataService.instance.getTipoComida())
+                        let comida = DataService.instance.getTipoComida()[indexPath.row]
+                        cell.fillTable(tipoComida: comida , descripcion:dieta1Content[indexPath.row] )
+                        return cell
+                }
+
             }
         }
         else if tableView == dieta2Tableview{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as? dietasCell{
-                let dieta2Content = DataService.instance.getDieta2()[indexPath.row]
-                let comida = DataService.instance.getTipoComida()[indexPath.row]
-                cell.fillTable(tipoComida: comida , descripcion:dieta2Content )
-                return cell
+                let dieta2Content = DataService.instance.getDieta2()
+                if dieta2Content.count != 0 {
+                    let comida = DataService.instance.getTipoComida()[indexPath.row]
+                    cell.fillTable(tipoComida: comida , descripcion:dieta2Content[indexPath.row] )
+                    return cell
+                }
             }
         }
         else if tableView == dieta3Tableview{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as? dietasCell{
-                let dieta3Content = DataService.instance.getDieta3()[indexPath.row]
-                let comida = DataService.instance.getTipoComida()[indexPath.row]
-                cell.fillTable(tipoComida: comida , descripcion:dieta3Content )
-                return cell
+                print("cantidad en dieta 3 \(DataService.instance.getDieta3().count)")
+                let dieta3Content = DataService.instance.getDieta3()
+                if dieta3Content.count != 0 {
+                    print(indexPath.row)
+                    let comida = DataService.instance.getTipoComida()[indexPath.row]
+                    cell.fillTable(tipoComida: comida , descripcion:dieta3Content[indexPath.row] )
+                    return cell
+                }
             }
         }
        
@@ -160,24 +193,28 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView == self.dieta1Tableview{
-            if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
-                let dieta1Header = DataService.instance.getNombreDietas()[0]
-                header.setHeader(nombreDieta: dieta1Header)
-                return header
+            if DataService.instance.getNombreDieta1() != ""{
+                if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
+                    header.setHeader(nombreDieta: DataService.instance.getNombreDieta1())
+                    return header
+                }
             }
         }
         else if tableView == dieta2Tableview{
-            if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
-                let dieta1Header = DataService.instance.getNombreDietas()[1]
-                header.setHeader(nombreDieta: dieta1Header)
-                return header
+            if DataService.instance.getNombreDieta2() != "" {
+                if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
+                        header.setHeader(nombreDieta: DataService.instance.getNombreDieta2())
+                        return header
+                }
             }
+           
         }
         else if tableView == dieta3Tableview{
-            if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
-                let dieta1Header = DataService.instance.getNombreDietas()[2]
-                header.setHeader(nombreDieta: dieta1Header)
-                return header
+            if DataService.instance.getNombreDieta3() != "" {
+                if let header = tableView.dequeueReusableCell(withIdentifier: "header") as? dietasCell{
+                    header.setHeader(nombreDieta: DataService.instance.getNombreDieta3())
+                    return header
+                }
             }
         }
         return UIView()
@@ -191,9 +228,15 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         return 95.0
     }
     
-    //
     
-    
+    //Notifications
+
+    @objc func reload(){
+        self.dieta1Tableview.reloadData()
+        self.dieta2Tableview.reloadData()
+        self.dieta3Tableview.reloadData()
+        print("recargado")
+    }
 }//
 
 

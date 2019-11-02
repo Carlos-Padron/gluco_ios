@@ -22,6 +22,7 @@ class dietasCell: UITableViewCell {
     //Variables
     let deleteImg = UIImage(named: "deleteBtn")
     let editImg = UIImage(named: "editBtn")
+    
 ///////
     var dieta1: DocumentReference!
     var dieta2: DocumentReference!
@@ -57,63 +58,80 @@ class dietasCell: UITableViewCell {
 
     @IBAction func deletePressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            print("1")
+            let dietasVC = DietasVC()
+            var email = dietasVC.email
+            if email == nil { email = DataService.instance.getPacientes()[0].email}
+            print(email!)
+            DataService.instance.deleteDieta1(email: email!)
         }
         if sender.tag == 2 {
-            print("2")
+            let dietasVC = DietasVC()
+            var email = dietasVC.email
+            if email == nil { email = DataService.instance.getPacientes()[0].email}
+            print(email!)
+            DataService.instance.deleteDieta2(email: email!)
         }
         if sender.tag == 3 {
-            print("3")
+            let dietasVC = DietasVC()
+            var email = dietasVC.email
+            if email == nil { email = DataService.instance.getPacientes()[0].email}
+            print(email!)
+            DataService.instance.deleteDieta3(email: email!)
         }
     }
     
     
     @IBAction func editPressed(_ sender: UIButton) {
         if sender.tag == 1 {
+            let name = DataService.instance.getNombreDieta1()
+            var dieta = DataService.instance.getDieta1()
             print("1")
+            let modal = AddDietas()
+            let dietasC = DietasVC()
+            if dietasC.email == nil {
+                modal.email = DataService.instance.getPacientes()[0].email
+            }else{
+                modal.email = dietasC.email!
+            }
+            modal.operation = 1
+            modal.modalPresentationStyle = .custom
+            self.window?.rootViewController?.present(modal, animated: true, completion: nil)
+            modal.setDieta(nombre: name, desayuno: dieta[0] as String, comida: dieta[1] as String, cena: dieta[2] as String, extra: dieta[3] as String)
         }
         if sender.tag == 2 {
-            print("2")
+            let name = DataService.instance.getNombreDieta2()
+            var dieta = DataService.instance.getDieta2()
+            let modal = AddDietas()
+            let dietasC = DietasVC()
+            if dietasC.email == nil {
+                modal.email = DataService.instance.getPacientes()[0].email
+            }else{
+                modal.email = dietasC.email!
+            }
+            modal.operation = 2
+            modal.modalPresentationStyle = .custom
+            self.window?.rootViewController?.present(modal, animated: true, completion: nil)
+            modal.setDieta(nombre: name, desayuno: dieta[0] as String, comida: dieta[1] as String, cena: dieta[2] as String, extra: dieta[3] as String)
         }
         if sender.tag == 3 {
-            print("3")
+            let name = DataService.instance.getNombreDieta3()
+            var dieta = DataService.instance.getDieta3()
+            let modal = AddDietas()
+            let dietasC = DietasVC()
+            if dietasC.email == nil {
+                modal.email = DataService.instance.getPacientes()[0].email
+            }else{
+                modal.email = dietasC.email!
+            }
+            modal.operation = 3
+            modal.modalPresentationStyle = .custom
+            self.window?.rootViewController?.present(modal, animated: true, completion: nil)
+            modal.setDieta(nombre: name, desayuno: dieta[0] as String, comida: dieta[1] as String, cena: dieta[2] as String, extra: dieta[3] as String)
         }
     }
     
     
-    //Agregar Dietas
-    func searchDocReferenc(){
-        dieta1 = Firestore.firestore().document("dietas/dieta1")
-        dieta1.getDocument { (docSnapshot, error) in
-            let doc1 = docSnapshot
-            if doc1!.exists{
-                //obtenemos los datos
-            }else{
-                //hacer inserciones
-            }
-        }
-        
-        dieta2 = Firestore.firestore().document("dietas/dieta2")
-        dieta2.getDocument { (docSnapshot, error) in
-            let doc2 = docSnapshot
-            if doc2!.exists{
-                //obtener datos
-            }else{
-                //hacer inserciones
-            }
-        }
-        
-        
-        dieta3 = Firestore.firestore().document("dietas/dieta2")
-        dieta3.getDocument { (docSnapshot, error) in
-            let doc3 = docSnapshot
-            if doc3!.exists {
-                //obtener datos
-            }else{
-                //hacer inserciones
-            }
-        }
-    }
+    
     
     
     

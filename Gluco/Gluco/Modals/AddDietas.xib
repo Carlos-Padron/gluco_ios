@@ -13,9 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDietas" customModule="Gluco" customModuleProvider="target">
             <connections>
                 <outlet property="alimentosTextField" destination="sMz-EN-bke" id="hsN-75-ggI"/>
+                <outlet property="button" destination="sxv-Rb-j9r" id="Lvy-86-1gN"/>
                 <outlet property="cenaTextFiled" destination="Dhy-MV-ycW" id="8Te-uL-hne"/>
                 <outlet property="comidaTextField" destination="QGF-ni-mqh" id="QkM-1T-hcx"/>
                 <outlet property="desayunoTextField" destination="Jgq-B1-puq" id="PL6-jH-Yvg"/>
+                <outlet property="modalTitle" destination="DXg-Rb-z87" id="wlC-Qq-WTR"/>
                 <outlet property="nombreTextField" destination="HNy-wm-M1t" id="R0h-Me-rye"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
