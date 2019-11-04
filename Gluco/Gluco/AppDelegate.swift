@@ -18,16 +18,10 @@ import Firebase
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        self.getPacientes()
+        //self.getInfo()
+        self.setInitialViewController()
         FirebaseApp.configure(name: "CreatingUsersApp", options: FirebaseApp.app()!.options)
-
-        setInitialViewController()
-        getPacientes()
-        //DataService.instance.getDieta1Query()
-        
-       
-        
-
-
         return true
     }
 
@@ -68,6 +62,7 @@ import Firebase
                     
                     let data = docSnapshot.data()
                     variables.userType = data!["tipo"] as? String ?? ""
+                    print("tipo de usuario " + variables.userType)
                     if variables.userType == "paciente" {
                         let frontNavigationController:UINavigationController
                         let revealController = SWRevealViewController()
@@ -112,6 +107,8 @@ import Firebase
                         mainRevealController  = revealController
                         
                         UIApplication.shared.delegate!.window??.rootViewController = mainRevealController
+                        
+                        DataService.instance.fecthInfoFromFB(email: userId!)
                     }
                 })
             }else{
@@ -127,6 +124,13 @@ import Firebase
         if Auth.auth().currentUser != nil {
             DataService.instance.getPaccientesFromFB()
             
+        }
+    }
+    
+    func getInfo(){
+         if Auth.auth().currentUser != nil {
+            let email = Auth.auth().currentUser?.email
+        DataService.instance.fecthInfoFromFB(email: email!)
         }
     }
     

@@ -14,6 +14,8 @@ class DataService {
     //Variables
     
     private var docRef: DocumentReference? = nil
+    typealias CompletionHandler = (_ Success: Bool) -> ()
+
     
     
     //Menu services
@@ -61,9 +63,27 @@ class DataService {
     //pacientes services
     
     private var pacientesArray = [pacientes]()
+    private var pacienteInfoArray = [String]()
     
     func getPacientes() -> [pacientes]{
         return pacientesArray
+    }
+    
+    func getPacienteInfo() -> [String]{
+        return pacienteInfoArray
+    }
+    
+    //User services
+    
+    private var doctor = [String]()
+    private var user = [String]()
+    
+    func getDoctorInfo() -> [String]{
+        return doctor
+    }
+    
+    func getUserInfo() -> [String]{
+    return user
     }
     
     //Dietas services
@@ -75,6 +95,7 @@ class DataService {
     private var dieta1Array = [String]()
     private var dieta2Array = [String]()
     private var dieta3Array = [String]()
+    
     
     func getDieta1() -> [String] {
         return dieta1Array
@@ -92,10 +113,6 @@ class DataService {
         return tipoComida
     }
     
-//    func getNombreDietas() -> [String]{
-//        return nombreDieta
-//    }
-    
     func getNombreDieta1() -> String{
         return nombreDieta1 ?? ""
     }
@@ -108,7 +125,19 @@ class DataService {
         return nombreDieta3 ?? ""
     }
     
+
+    
     //Functions
+    
+    func setPacienteInfo(index: Int){
+        self.pacienteInfoArray.removeAll()
+        self.pacienteInfoArray.append("Nombre: \(pacientesArray[index].nombre)")
+        self.pacienteInfoArray.append("Género: \(pacientesArray[index].genero)")
+        self.pacienteInfoArray.append("Nacimiento: \(pacientesArray[index].nacimiento)")
+        self.pacienteInfoArray.append("Tipo de diabetes: \(pacientesArray[index].diabetes)")
+        print(pacienteInfoArray)
+    }
+    
     
     func getPaccientesFromFB(){
         let id = Auth.auth().currentUser?.email
@@ -122,7 +151,7 @@ class DataService {
                     let nombre = document.data()["nombre"] as! String
                     let email = document.data()["email"] as! String
                     let genero = document.data()["genero"] as! String
-                    let nacimiento = document.data()["nacimiento"] as! Timestamp
+                    let nacimiento = document.data()["nacimiento"] as! String
                     let doctor = document.data()["doctor"] as! String
                     let diabetes = document.data()["diabetes"] as! String
                     
@@ -133,7 +162,8 @@ class DataService {
                 }
                 self.setInitialDieta1()
                 self.setInitialDieta2()
-                self.setInitialDieta3()
+                self.setInitialDieta3() 
+                
             }
         }
     }
@@ -380,8 +410,74 @@ class DataService {
     }
     
 
+   
+    func logOut(){
+        self.dieta1Array.removeAll()
+        self.dieta2Array.removeAll()
+        self.dieta3Array.removeAll()
+        self.nombreDieta1 = nil
+        self.nombreDieta2 = nil
+        self.nombreDieta3 = nil
+        self.pacientesArray.removeAll()
+        self.pacienteInfoArray.removeAll()
+        self.doctor.removeAll()
+        self.user.removeAll()
+    }
     
-  
+    func fecthInfoFromFB(email:String){
+        print(variables.userType)
+        self.doctor.removeAll()
+        self.user.removeAll()
+        if variables.userType == "doctor" {
+            var userDoc: DocumentReference!
+            userDoc = Firestore.firestore().document("doc/\(email)")
+            userDoc.getDocument { (docSnapshot, error) in
+                if let doc = docSnapshot, doc.exists {
+                    
+                    let nombre = doc.data()!["nombre"]
+                    let telefono = doc.data()!["telefono"]
+                    let direccion = doc.data()!["direccion"]
+                    let horaEntrada = doc.data()!["horaEntrada"]
+                    let horaSalida = doc.data()!["horaSalida"]
+                    
+                    self.doctor.append(nombre as! String)
+                    self.doctor.append(telefono as! String)
+                    self.doctor.append(direccion as! String)
+                    self.doctor.append(horaEntrada as! String)
+                    self.doctor.append(horaSalida as! String)
+                    print(self.doctor)
+                   NotificationCenter.default.post(name: NSNotification.Name("ReloadProfile"), object: nil)
+                }
+            }//
+        }
+        if variables.userType == "paciente"{
+            var userDoc: DocumentReference!
+            userDoc = Firestore.firestore().document("paciente/\(email)")
+            userDoc.getDocument { (docSnapshot, error) in
+                if let doc = docSnapshot, doc.exists {
+                    
+                    let nombre = doc.data()!["nombre"]
+                    let genero = doc.data()!["genero"]
+                    let nacimiento = doc.data()!["nacimiento"]
+                    let email = doc.data()!["email"]
+                    let doctor = doc.data()!["doctor"]
+                    let diabetes = doc.data()!["diabetes"]
+                    
+                    self.user.append(nombre as! String)
+                    self.user.append(genero as! String)
+                    self.user.append(nacimiento as! String)
+                    self.user.append(email as! String)
+                    self.user.append(doctor as! String)
+                    self.user.append(diabetes as! String)
+                    
+                   NotificationCenter.default.post(name: NSNotification.Name("ReloadProfile"), object: nil)
+                }
+            }//
+        }
+    
+    }
+    
+    
     
     
 }//

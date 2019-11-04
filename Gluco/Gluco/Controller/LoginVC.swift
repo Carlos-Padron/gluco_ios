@@ -113,11 +113,15 @@ class LoginVC: UIViewController {
                         self.spinner.stopAnimating()
                         self.spinner.isHidden = true
                         if variables.userType == "paciente" {
-                            
+                            DataService.instance.getPaccientesFromFB()
                             self.performSegue(withIdentifier: "unwindMediciones", sender: self)
                         }
                         else if variables.userType == "doctor" {
+                            DataService.instance.fecthInfoFromFB(email: email)
+                            self.spinner.stopAnimating()
+                            self.spinner.isHidden = true
                             self.performSegue(withIdentifier: "unwindConsultas", sender: self)
+                           
                         }
                     })
                 }//

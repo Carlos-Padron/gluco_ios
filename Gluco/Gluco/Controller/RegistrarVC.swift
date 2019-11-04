@@ -64,7 +64,11 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         if genero == nil {genero = DataService.instance.getGenero()[0]}
         if diabetes == nil {diabetes = DataService.instance.getDiabetes()[0]}
         
-        let dataToSave: [String: Any] = ["nombre": name, "genero": genero!, "nacimiento": nacimientoPicker.date, "diabetes": diabetes!, "doctor": docId ,"email": email]
+        let dateformater = DateFormatter()
+        dateformater.dateFormat = "d-M-yyyy"
+        var nacimiento = dateformater.string(from: nacimientoPicker.date)
+        
+        let dataToSave: [String: Any] = ["nombre": name, "genero": genero!, "nacimiento": nacimiento, "diabetes": diabetes!, "doctor": docId ,"email": email]
         let userType: [String: Any] = ["tipo":"paciente"]
 
         if password == password2{
@@ -74,14 +78,14 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 view.isUserInteractionEnabled = false
                 if let secondaryApp = FirebaseApp.app(name: "CreatingUsersApp") {
                     let secondaryAppAuth = Auth.auth(app: secondaryApp)
-                    
+
                     // Create user in secondary app.
                     secondaryAppAuth.createUser(withEmail: email, password: password) { (user, error) in
                         if error != nil {
                             let callBack = AuthService.instance.errorHandler(error: error! as NSError)
-                            
+
                             switch callBack {
-                                
+
                             case "usedEmail":
                                 self.spinner.stopAnimating()
                                 self.spinner.isHidden = true
@@ -91,7 +95,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
                                 break
-                                
+
                             case "userNotExists":
                                 print("no existe")
                                 self.spinner.stopAnimating()
@@ -101,7 +105,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
                                 break
-                                
+
                             case "wrongPW":
                                 print("pw mala")
                                 self.spinner.stopAnimating()
@@ -111,7 +115,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
                                 break
-                                
+
                             case "weakPW":
                                 print("pw fea")
                                 self.spinner.stopAnimating()
@@ -121,7 +125,7 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
                                 self.present(alert, animated: true, completion: nil)
                                 break
-                                
+
                             default :
                                 print("error")
                                 self.spinner.stopAnimating()
@@ -133,13 +137,13 @@ class RegistrarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                                 break
                             }
                         }else {// fin de error != nil se insertan datos del paciente
-                          
+
                             try! secondaryAppAuth.signOut()
                             self.docRef = Firestore.firestore().document("paciente/\(email)")
                             self.docRef?.setData(dataToSave) { (error) in
-                                
+
                                 if error != nil{
-                                    
+
                                     self.spinner.stopAnimating()
                                     self.spinner.isHidden = true
                                     self.view.isUserInteractionEnabled = true

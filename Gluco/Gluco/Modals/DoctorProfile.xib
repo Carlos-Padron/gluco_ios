@@ -13,6 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DoctorProfile" customModule="Gluco" customModuleProvider="target">
             <connections>
                 <outlet property="addressTextFile" destination="SMx-pf-pJb" id="uvQ-wC-fSg"/>
+                <outlet property="horarioEntradaPIcker" destination="Qyd-Jf-Wwx" id="vH2-nl-J7d"/>
+                <outlet property="horarioSalidaPicker" destination="ITv-Wc-t3U" id="9xT-f3-CWh"/>
+                <outlet property="nameLable" destination="woc-Oj-D0s" id="MIm-B6-WpA"/>
+                <outlet property="nombreTextField" destination="ah4-TP-xuI" id="qak-hK-ONA"/>
+                <outlet property="spinner" destination="qqY-mq-ibe" id="TU7-yZ-Dlx"/>
+                <outlet property="telefonoTextField" destination="zMR-dr-Es5" id="BKT-8u-kkj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,12 +40,17 @@
                                         <constraint firstAttribute="width" constant="315" id="nZP-fr-2PT"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woc-Oj-D0s">
-                                    <rect key="frame" x="28" y="16" width="372" height="41"/>
+                                <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qqY-mq-ibe">
+                                    <rect key="frame" x="325.5" y="281.5" width="37" height="37"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="color" red="0.047058823530000002" green="0.28627450980000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woc-Oj-D0s">
+                                    <rect key="frame" x="28" y="16" width="572" height="41"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="41" id="ITK-HE-1PF"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
                                     <color key="textColor" red="0.51372549020000002" green="0.59999999999999998" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -157,6 +168,9 @@
                                             <state key="normal" title="Actualizar perfil">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="actualizarPerfilPressed:" destination="-1" eventType="touchUpInside" id="NPY-4D-WO6"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -199,6 +213,7 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailingMargin" secondItem="ACO-6e-NE3" secondAttribute="trailing" constant="10" id="0nD-kH-rZ6"/>
+                                <constraint firstItem="qqY-mq-ibe" firstAttribute="centerY" secondItem="H0S-2r-5qj" secondAttribute="centerY" id="2Ui-aQ-gB1"/>
                                 <constraint firstItem="4hc-4n-neb" firstAttribute="top" secondItem="zRi-r6-iXC" secondAttribute="bottom" constant="10" id="3Ij-Wk-3VO"/>
                                 <constraint firstItem="0ur-uY-R4Z" firstAttribute="trailing" secondItem="ACO-6e-NE3" secondAttribute="trailing" id="4xv-Ul-n2u"/>
                                 <constraint firstItem="woc-Oj-D0s" firstAttribute="top" secondItem="H0S-2r-5qj" secondAttribute="topMargin" constant="8" id="5EC-IU-0eA"/>
@@ -208,8 +223,9 @@
                                 <constraint firstItem="zRi-r6-iXC" firstAttribute="centerX" secondItem="H0S-2r-5qj" secondAttribute="centerX" id="Dv4-Th-gCv"/>
                                 <constraint firstItem="zRi-r6-iXC" firstAttribute="top" secondItem="0ur-uY-R4Z" secondAttribute="bottom" constant="5" id="Q5u-xW-qdW"/>
                                 <constraint firstItem="0ur-uY-R4Z" firstAttribute="top" secondItem="8e5-TH-KO9" secondAttribute="top" id="RU2-CC-Vtc"/>
+                                <constraint firstItem="qqY-mq-ibe" firstAttribute="centerX" secondItem="H0S-2r-5qj" secondAttribute="centerX" id="SuX-xU-dcz"/>
                                 <constraint firstAttribute="trailing" secondItem="4hc-4n-neb" secondAttribute="trailing" constant="100" id="Uc9-tN-ctL"/>
-                                <constraint firstItem="ACO-6e-NE3" firstAttribute="leading" secondItem="woc-Oj-D0s" secondAttribute="trailing" constant="220" id="WLp-0d-3dN"/>
+                                <constraint firstItem="ACO-6e-NE3" firstAttribute="leading" secondItem="woc-Oj-D0s" secondAttribute="trailing" constant="20" id="WLp-0d-3dN"/>
                                 <constraint firstItem="4hc-4n-neb" firstAttribute="centerX" secondItem="H0S-2r-5qj" secondAttribute="centerX" id="Zte-LV-3sZ"/>
                                 <constraint firstItem="0ur-uY-R4Z" firstAttribute="leading" secondItem="8e5-TH-KO9" secondAttribute="trailing" constant="10" id="c1x-Ea-ltV"/>
                                 <constraint firstItem="woc-Oj-D0s" firstAttribute="leading" secondItem="H0S-2r-5qj" secondAttribute="leadingMargin" constant="20" id="jIP-c4-vMW"/>

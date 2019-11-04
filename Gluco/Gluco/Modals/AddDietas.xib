@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDietas" customModule="Gluco" customModuleProvider="target">
             <connections>
-                <outlet property="alimentosTextField" destination="sMz-EN-bke" id="hsN-75-ggI"/>
+                <outlet property="alimentosTextField" destination="ak0-6s-c2k" id="pvn-sC-dZC"/>
                 <outlet property="button" destination="sxv-Rb-j9r" id="Lvy-86-1gN"/>
                 <outlet property="cenaTextFiled" destination="Dhy-MV-ycW" id="8Te-uL-hne"/>
                 <outlet property="comidaTextField" destination="QGF-ni-mqh" id="QkM-1T-hcx"/>
@@ -44,7 +44,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Thb-ff-0oX">
-                            <rect key="frame" x="50" y="111" width="629" height="355"/>
+                            <rect key="frame" x="50" y="111" width="629" height="288.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Vh5-e9-uot">
                                     <rect key="frame" x="0.0" y="0.0" width="627.5" height="34.5"/>
@@ -127,7 +127,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGp-Ed-QNf">
-                                    <rect key="frame" x="0.0" y="254" width="628" height="101"/>
+                                    <rect key="frame" x="0.0" y="254" width="629" height="34.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alimentos permitidos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsp-g2-VPK">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="34.5"/>
@@ -135,19 +135,21 @@
                                             <color key="textColor" red="0.51372549020000002" green="0.59999999999999998" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-EN-bke">
-                                            <rect key="frame" x="278" y="0.0" width="350" height="101"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-6s-c2k">
+                                            <rect key="frame" x="278" y="0.0" width="351" height="34.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="350" id="GGl-QD-h0g"/>
+                                                <constraint firstAttribute="height" constant="34.5" id="shL-zK-Wtc"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                 </stackView>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="VGp-Ed-QNf" secondAttribute="trailing" id="6do-RW-Ng1"/>
+                            </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHE-pY-CeN">
                             <rect key="frame" x="669" y="22.5" width="50" height="50"/>
@@ -157,7 +159,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxv-Rb-j9r" customClass="roundedButton" customModule="Gluco" customModuleProvider="target">
-                            <rect key="frame" x="445" y="491" width="234" height="50"/>
+                            <rect key="frame" x="445" y="424.5" width="234" height="50"/>
                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="5UG-1S-UZX"/>

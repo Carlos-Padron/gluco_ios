@@ -62,15 +62,29 @@ class DietasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     @IBAction func addPressed(_ sender: Any) {
-        if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
-        buscarDietas(email: email)
-        agregarDietas()
+        if DataService.instance.getPacientes().count == 0 {
+            let alert = UIAlertController(title: "No hay pacientes", message: "Para continuar por favor agregar pacientes", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style:.default ))
+            return
+        }else{
+            if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
+            buscarDietas(email: email)
+            agregarDietas()
+        }
+
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
-        if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
-        print(email)
-        buscarDietas(email: email)
+        if DataService.instance.getPacientes().count == 0 {
+            let alert = UIAlertController(title: "No hay pacientes", message: "Para continuar por favor agregar pacientes", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style:.default ))
+            return
+        }else{
+            if self.email == nil {self.email = DataService.instance.getPacientes()[0].email}
+            print(email)
+            buscarDietas(email: email)
+        }
+
         
     }
     func agregarDietas(){

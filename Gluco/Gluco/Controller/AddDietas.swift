@@ -16,7 +16,7 @@ class AddDietas: UIViewController {
     @IBOutlet weak var desayunoTextField: UITextField!
     @IBOutlet weak var comidaTextField: UITextField!
     @IBOutlet weak var cenaTextFiled: UITextField!
-    @IBOutlet weak var alimentosTextField: UITextView!
+    @IBOutlet weak var alimentosTextField: UITextField!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var modalTitle: UILabel!
     
@@ -32,7 +32,6 @@ class AddDietas: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.alimentosTextField.isHidden = false
         print(email!)
         print(operation)
         // Do any additional setup after loading the view.

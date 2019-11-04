@@ -38,13 +38,17 @@ class CompletarRegistroVC: UIViewController {
 
         guard let direccion = consultorioTextField.text, !direccion.isEmpty  else {return}
         guard let phone = phoneTextField.text , !phone.isEmpty else {return}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+         dateFormatter.string(from: consultaInicio.date)
 
         self.spinner.isHidden = false
         self.spinner.startAnimating()
         view.isUserInteractionEnabled = false
         let horaConsultaIncio = Calendar.current.date(byAdding: .hour, value: -5, to: consultaInicio.date)//para obetenre la hora
         let horaConsultaFin = Calendar.current.date(byAdding: .hour, value: -5, to: consultaFin.date)// para setear la hora
-        let dataToSave: [String: Any] = ["nombre": name, "telefono": phone, "direccion": direccion, "horaEntrada": horaConsultaIncio, "horaSalida": horaConsultaFin]
+        let dataToSave: [String: Any] = ["nombre": name, "telefono": phone, "direccion": direccion, "horaEntrada": dateFormatter.string(from: consultaInicio.date), "horaSalida": dateFormatter.string(from: consultaFin.date)]
         let userType: [String: Any] = ["tipo":"doctor"]
 
       
@@ -79,7 +83,9 @@ class CompletarRegistroVC: UIViewController {
                         alert.addAction(UIAlertAction(title: "Ok", style: .default))
                         self.present(alert, animated: true, completion: nil)
                     }else{
+                        variables.userType = "doctor"
                         print("bien tipo")
+                        DataService.instance.fecthInfoFromFB(email: userId)
                         self.spinner.stopAnimating()
                         self.spinner.isHidden = true
                         self.performSegue(withIdentifier: "toConsultasSegue", sender: self)
@@ -87,15 +93,15 @@ class CompletarRegistroVC: UIViewController {
                 }
             }//
         }
-        
 
-        
-        
-        //self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
+
 
 
         //self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
-    }
+
+
+        //self.performSegue(withIdentifier: "unwindConsultasFromRegistro", sender: self)
+    }//
 
     
     

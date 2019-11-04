@@ -19,6 +19,7 @@
 		5B49451F23614C8F00DD1105 /* mediciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49451E23614C8F00DD1105 /* mediciones.swift */; };
 		5B4945212361567E00DD1105 /* dietasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4945202361567E00DD1105 /* dietasCell.swift */; };
 		5B5730332340833A0062F954 /* CompletarRegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5730322340833A0062F954 /* CompletarRegistroVC.swift */; };
+		5B63EFAA236EB1EE008F43E3 /* pacienteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EFA9236EB1EE008F43E3 /* pacienteCell.swift */; };
 		5B76C29E232F25BF00D0BF75 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */; };
 		5B76C2A6232F320800D0BF75 /* ConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A5232F320800D0BF75 /* ConsultaVC.swift */; };
 		5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76C2A7232F321E00D0BF75 /* MenuVCa.swift */; };
@@ -56,6 +57,7 @@
 		5B49451E23614C8F00DD1105 /* mediciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mediciones.swift; path = Gluco/Controller/mediciones.swift; sourceTree = SOURCE_ROOT; };
 		5B4945202361567E00DD1105 /* dietasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietasCell.swift; sourceTree = "<group>"; };
 		5B5730322340833A0062F954 /* CompletarRegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletarRegistroVC.swift; sourceTree = "<group>"; };
+		5B63EFA9236EB1EE008F43E3 /* pacienteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pacienteCell.swift; sourceTree = "<group>"; };
 		5B76C29B232F25BA00D0BF75 /* Gluco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gluco-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B76C29C232F25BD00D0BF75 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5B76C29D232F25BE00D0BF75 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				5BD0CD662330398F00A59451 /* roundedButton.swift */,
 				5B02759D2334824C000300F7 /* menuCell.swift */,
 				5B4945202361567E00DD1105 /* dietasCell.swift */,
+				5B63EFA9236EB1EE008F43E3 /* pacienteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				5B2E77662343136F00ACE107 /* AuthService.swift in Sources */,
 				5BC4961F2337439D0014FA61 /* DoctorVC.swift in Sources */,
 				5B49451B23614C5F00DD1105 /* dietas.swift in Sources */,
+				5B63EFAA236EB1EE008F43E3 /* pacienteCell.swift in Sources */,
 				5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */,
 				5B76C2A8232F321E00D0BF75 /* MenuVCa.swift in Sources */,
 				5BC496272337486B0014FA61 /* UserProfileVC.swift in Sources */,

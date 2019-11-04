@@ -14,13 +14,50 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //Outlets
     
 
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userPic: UIImageView!
+    @IBOutlet weak var diabates: UILabel!
     
     
     override func viewDidLoad() {
         self.revealViewController().rearViewRevealWidth = (self.view.frame.size.width - 150)
         tableView.dataSource = self
         tableView.delegate = self
+        setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuVC.reloadProfile), name: NSNotification.Name(rawValue: "ReloadProfile"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReloadProfile"), object: nil)
+    }
+    
+    @objc func reloadProfile(){
+        if variables.userType == "doctor" {
+            self.userName.text = DataService.instance.getDoctorInfo()[0]
+            print( DataService.instance.getDoctorInfo()[0])
+            diabates.text = ""
+        }else{
+            self.userName.text = DataService.instance.getPacienteInfo()[0]
+            diabates.text = DataService.instance.getPacienteInfo()[5]
+        }
+    }
+    
+    func setUpView(){
+        if variables.userType == "doctor" {
+            self.userName.text = DataService.instance.getDoctorInfo()[0]
+            print( DataService.instance.getDoctorInfo()[0])
+            diabates.text = ""
+        }else{
+            self.userName.text = DataService.instance.getPacienteInfo()[0]
+            diabates.text = DataService.instance.getPacienteInfo()[5]
+        }
+        
     }
     
     @IBAction func profileBtn(_ sender: Any) {
@@ -30,10 +67,14 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             showProfile.modalPresentationStyle = .custom
             present(showProfile, animated: true)
             
+            
         }else if(variables.userType == "doctor"){
            let showProfile = DoctorProfile()
             showProfile.modalPresentationStyle = .custom
             present(showProfile, animated: true)
+            var info = DataService.instance.getDoctorInfo()
+            showProfile.setInfo(titulo: info[0], nombre: info[0], telefono: info[1], direccion: info[2], hEntrada: info[3], hSalida: info[4])
+            
         }
         
        
@@ -117,6 +158,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func logoutTapped(_ sender: UIButton) {
         try! Auth.auth().signOut()
+        DataService.instance.logOut()
         self.performSegue(withIdentifier: "LoginSegue", sender: self)
     }
     
