@@ -42,7 +42,7 @@ class DataService {
         return userMenu
     }
     
-    //Doctor/user services
+    //Picker services
     
     private let diabetes = [
     "Diabetes tipo 1", "Diabetes tipo 2"
@@ -125,6 +125,14 @@ class DataService {
         return nombreDieta3 ?? ""
     }
     
+    
+    //Mediciones services
+    
+    private var medicionesArray = [mediciones]()
+    
+    func getMediciones() -> [mediciones]{
+        return medicionesArray
+    }
 
     
     //Functions
@@ -422,6 +430,7 @@ class DataService {
         self.pacienteInfoArray.removeAll()
         self.doctor.removeAll()
         self.user.removeAll()
+        self.medicionesArray.removeAll()
     }
     
     func fecthInfoFromFB(email:String){
@@ -477,6 +486,35 @@ class DataService {
     
     }
     
+    func getMedicionesFromFB(email:String, fecha:String){
+        print("en dS")
+        print(email)
+        print(fecha)
+        print("04-11-2019")
+        self.medicionesArray.removeAll()
+        //.whereField("fecha", isEqualTo: fecha).
+        Firestore.firestore().collection("mediciones").whereField("email", isEqualTo: email).whereField("fecha", isEqualTo: fecha).order(by: "hora").getDocuments { (QuerySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in QuerySnapshot!.documents {
+                    let email = document.data()["email"]
+                    let fecha = document.data()["fecha"]
+                    let hora = document.data()["hora"]
+                    let medicion = document.data()["medicion"]
+                    let observacion = document.data()["observacion"]
+                    
+                    let medicionObj = mediciones(email: email as! String, fecha: fecha as! String, hora: hora as! String, medicion: medicion as! String, observacion: observacion as! String)
+                    self.medicionesArray.append(medicionObj )
+                    print(self.medicionesArray[0].email)
+                    NotificationCenter.default.post(name: NSNotification.Name("recargarMedicion"), object: nil)
+                    
+                    
+                }
+            }
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("recargarMedicion"), object: nil)
+    }
     
     
     

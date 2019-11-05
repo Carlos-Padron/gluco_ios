@@ -35,6 +35,7 @@
 		5BC496282337486B0014FA61 /* UserProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC496262337486B0014FA61 /* UserProfileVC.xib */; };
 		5BD09415233021870031AAD8 /* circularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD09414233021870031AAD8 /* circularImage.swift */; };
 		5BD0CD672330398F00A59451 /* roundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0CD662330398F00A59451 /* roundedButton.swift */; };
+		5BE5C8942371324F00F6AFF0 /* medicionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5C89223712E6200F6AFF0 /* medicionCell.swift */; };
 		5BF744F8232B491F00709904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF744F7232B491F00709904 /* AppDelegate.swift */; };
 		5BF744FD232B491F00709904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF744FB232B491F00709904 /* Main.storyboard */; };
 		5BF744FF232B492300709904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF744FE232B492300709904 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		5BC496262337486B0014FA61 /* UserProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileVC.xib; sourceTree = "<group>"; };
 		5BD09414233021870031AAD8 /* circularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularImage.swift; sourceTree = "<group>"; };
 		5BD0CD662330398F00A59451 /* roundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedButton.swift; sourceTree = "<group>"; };
+		5BE5C89223712E6200F6AFF0 /* medicionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medicionCell.swift; sourceTree = "<group>"; };
 		5BF744F4232B491F00709904 /* Gluco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gluco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF744F7232B491F00709904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF744FC232B491F00709904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				5B02759D2334824C000300F7 /* menuCell.swift */,
 				5B4945202361567E00DD1105 /* dietasCell.swift */,
 				5B63EFA9236EB1EE008F43E3 /* pacienteCell.swift */,
+				5BE5C89223712E6200F6AFF0 /* medicionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC4961B2337436C0014FA61 /* RegistrarVC.swift in Sources */,
+				5BE5C8942371324F00F6AFF0 /* medicionCell.swift in Sources */,
 				5B8F807F2363B95C002E62FC /* AddDietas.swift in Sources */,
 				5BD09415233021870031AAD8 /* circularImage.swift in Sources */,
 				5BC4961D2337437E0014FA61 /* MedicionVC.swift in Sources */,

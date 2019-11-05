@@ -14,6 +14,8 @@ class ConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var pacienteTableview: UITableView!
     @IBOutlet weak var pacientesPicker: UIPickerView!
+    @IBOutlet weak var medicionTableview: UITableView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //Variables
     var email: String!
@@ -24,6 +26,20 @@ class ConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         setUpSWReveal()
        self.pacientesPicker.reloadAllComponents()
         self.reloadPicker()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(ConsultaVC.reload), name: NSNotification.Name(rawValue: "recargarMedicion"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "recargarMedicion"), object: nil)
+    }
+    
+    @objc func reload(){
+    self.medicionTableview.reloadData()
     }
     
     
@@ -47,7 +63,7 @@ class ConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBAction func unwindToConsultasFromRegistro(sender: UIStoryboardSegue) {}
     
     @IBAction func searchPaciente(_ sender: UIButton) {
-         self.pacientesPicker.reloadAllComponents()
+        self.pacientesPicker.reloadAllComponents()
         if DataService.instance.getPacientes().count == 0 {
             print("0")
             return
@@ -60,6 +76,24 @@ class ConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
     }
     
+    @IBAction func buscarPressed(_ sender: UIButton) {
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-M-yyyy"
+        timeFormatter.dateFormat = "HH:mm"
+        
+        let fecha = dateFormatter.string(from: self.datePicker.date)
+       
+       
+        
+        if DataService.instance.getPacientes().count == 0 {return}
+        if self.email == nil {self.email = DataService.instance.getPacientes()[0].email }
+        print(self.email!)
+        print(fecha)
+        DataService.instance.getMedicionesFromFB(email: email!, fecha: fecha)
+        
+        
+    }
     
     //UIPicker Protocols
     
@@ -88,16 +122,32 @@ class ConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     //UItableview Protocols
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.getPacienteInfo().count
+        if tableView == pacienteTableview{
+            return DataService.instance.getPacienteInfo().count
+        }
+        if tableView == medicionTableview{
+            return DataService.instance.getMediciones().count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath) as? pacienteCell{
-            print(DataService.instance.getPacienteInfo()[indexPath.row])
-            cell.setInfo(info: DataService.instance.getPacienteInfo()[indexPath.row])
-            return cell
+        
+        
+        if tableView == pacienteTableview{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath) as? pacienteCell{
+                print(DataService.instance.getPacienteInfo()[indexPath.row])
+                cell.setInfo(info: DataService.instance.getPacienteInfo()[indexPath.row])
+                return cell
+            }
         }
-        print("no jalo")
+        if tableView == medicionTableview{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "mediciones", for: indexPath) as? medicionCell{
+                cell.setUpTable(medicion: DataService.instance.getMediciones()[indexPath.row])
+                return cell
+            }
+        }
+        
         return UITableViewCell()
     }
     
