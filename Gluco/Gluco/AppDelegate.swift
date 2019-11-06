@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+         class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        self.getPacientes()
+        //self.getInfo()
+        self.setInitialViewController()
+        FirebaseApp.configure(name: "CreatingUsersApp", options: FirebaseApp.app()!.options)
         return true
     }
 
@@ -44,5 +48,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
+    
+    func setInitialViewController() {
+        var docRef: DocumentReference!
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil{
+                let userId = user?.email
+                docRef = Firestore.firestore().document("user/\(userId!)")
+                docRef.getDocument(completion: { (docSnapshot, error) in
+                    guard let docSnapshot = docSnapshot, docSnapshot.exists else {return}
+                    
+                    let data = docSnapshot.data()
+                    variables.userType = data!["tipo"] as? String ?? ""
+                    print("tipo de usuario " + variables.userType)
+                    if variables.userType == "paciente" {
+                        let frontNavigationController:UINavigationController
+                        let revealController = SWRevealViewController()
+                        var mainRevealController = SWRevealViewController()
+                        
+                        let front = storyboard.instantiateViewController(withIdentifier:  "MedicionViewContoller") as! MedicionVC
+                        let rear = storyboard.instantiateViewController(withIdentifier: "MenuController") as! MenuVC
+                        
+                        frontNavigationController =  UINavigationController.init(rootViewController: front)
+                        frontNavigationController.navigationBar.barTintColor = UIColor.init(red: 12.0/255.0, green: 73.0/255.0, blue: 120.0/255.0 , alpha: 1.0)
+                        frontNavigationController.navigationBar.titleTextAttributes = [
+                            NSAttributedString.Key.foregroundColor : UIColor.white,
+                            NSAttributedString.Key.font : UIFont(name: "Avenir-Heavy", size: 45)!
+                        ]
+                        frontNavigationController.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+                        revealController.frontViewController = frontNavigationController
+                        revealController.rearViewController = rear
+                        revealController.delegate = self
+                        mainRevealController  = revealController
+                        
+                        UIApplication.shared.delegate!.window??.rootViewController = mainRevealController
+                        //
+                    }
+                    else {
+                        let frontNavigationController:UINavigationController
+                        let revealController = SWRevealViewController()
+                        var mainRevealController = SWRevealViewController()
+                        
+                        let front = storyboard.instantiateViewController(withIdentifier:  "ConsultaController") as! ConsultaVC
+                        let rear = storyboard.instantiateViewController(withIdentifier: "MenuController") as! MenuVC
+                        
+                        frontNavigationController =  UINavigationController.init(rootViewController: front)
+                        frontNavigationController.navigationBar.barTintColor = UIColor.init(red: 12.0/255.0, green: 73.0/255.0, blue: 120.0/255.0 , alpha: 1.0)
+                        frontNavigationController.navigationBar.titleTextAttributes = [
+                            NSAttributedString.Key.foregroundColor : UIColor.white,
+                            NSAttributedString.Key.font : UIFont(name: "Avenir-Heavy", size: 45)!
+                        ]
+                        frontNavigationController.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+                        revealController.frontViewController = frontNavigationController
+                        revealController.rearViewController = rear
+                        revealController.delegate = self
+                        mainRevealController  = revealController
+                        
+                        UIApplication.shared.delegate!.window??.rootViewController = mainRevealController
+                        
+                        DataService.instance.fecthInfoFromFB(email: userId!)
+                    }
+                })
+            }else{
+                let login = storyboard.instantiateViewController(withIdentifier: "LogInController")
+                self.window?.rootViewController = login
+                self.window?.makeKeyAndVisible()
+            }
+            
+        }
+    }
 
+    func getPacientes(){
+        if Auth.auth().currentUser != nil {
+            DataService.instance.getPaccientesFromFB()
+            
+        }
+    }
+    
+    func getInfo(){
+         if Auth.auth().currentUser != nil {
+            let email = Auth.auth().currentUser?.email
+        DataService.instance.fecthInfoFromFB(email: email!)
+        }
+    }
+    
+}
